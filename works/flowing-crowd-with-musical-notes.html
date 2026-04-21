@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowing Crowd with Musical Notes — Wu Siou Ming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lato',sans-serif;color:#fff;background:#0b0b0d;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+/* ===== Unified Header ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  letter-spacing:1px
+}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{
+  font-size:.85rem;
+  opacity:.8;
+  transition:.3s
+}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  padding:.35rem .9rem;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.4);
+  font-size:.75rem;
+  cursor:pointer;
+  background:transparent;
+  color:#fff;
+  opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:#000;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('../images/work-flowing-crowd-with-musical-notes.jpg') center/cover no-repeat;
+  filter:brightness(.6);
+  transform:scale(1.05);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,.2),rgba(0,0,0,.85));
+}
+.hero-content{position:relative;z-index:2;padding:0 2rem}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.1rem;
+  letter-spacing:1.5px;
+  margin-bottom:1.4rem
+}
+.hero p{opacity:.7;letter-spacing:.5px}
+
+/* ===== Sections ===== */
+.section{max-width:980px;margin:auto;padding:6rem 2rem}
+.section-wide{max-width:1200px;margin:auto;padding:6rem 2rem}
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.1rem;
+  margin-bottom:2.2rem;
+  letter-spacing:1.2px
+}
+.section h2::before{
+  content:"";
+  display:block;
+  width:120px;
+  height:1px;
+  background:rgba(255,255,255,.12);
+  margin-bottom:1.2rem
+}
+
+/* ===== Gallery ===== */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.6rem
+}
+.gallery img{
+  width:calc(33% - 1rem);
+  border-radius:14px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:.6s;
+}
+.gallery img:hover{transform:scale(1.03)}
+@media(max-width:900px){.gallery img{width:calc(50% - 1rem)}}
+@media(max-width:600px){.gallery img{width:100%}}
+
+/* ===== Video ===== */
+.video-section{display:block}
+.video-container{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:14px;
+  overflow:hidden;
+}
+.video-container iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border:none;
+}
+
+
+.video-link a{
+  display:inline-block;
+  font-size:.9rem;
+  letter-spacing:.5px;
+  opacity:.7;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:.2rem;
+  transition:.3s
+}
+.video-link a:hover{opacity:1}
+
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:4vw
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:92vw;
+  max-height:88vh;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.5)
+}
+.lightbox-close{
+  position:fixed;
+  top:24px;right:28px;
+  font-size:1.6rem;
+  letter-spacing:2px;
+  opacity:.7;
+  cursor:pointer;
+  user-select:none
+}
+.lightbox-close:hover{opacity:1}
+
+/* ===== Concept ===== */
+.concept p{margin-bottom:1.8rem;opacity:.88}
+
+/* ===== Artwork Info ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:1.2rem 2.4rem;
+  opacity:.88;
+}
+.info-label{opacity:.5}
+
+/* ===== Exhibitions ===== */
+.exhibitions ul{list-style:none}
+.exhibitions li{margin-bottom:.8rem;opacity:.85}
+
+footer{
+  text-align:center;
+  padding:4rem 2rem;
+  font-size:.8rem;
+  opacity:.4
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:2.3rem}
+  .section h2{font-size:1.85rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Unified Nav ===== -->
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="../index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="../works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="../cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="../press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="../index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-en="Flowing Crowd with Musical Notes" data-zh="在此相遇">Flowing Crowd with Musical Notes</h1>
+    <p data-en="Interactive Intelligent Image Music System • 2022"
+       data-zh="互動智慧影像音樂系統 • 2022">
+       Interactive Intelligent Image Music System • 2022
+    </p>
+  </div>
+</section>
+
+<!-- ===== 2. PHOTOS ===== -->
+<section class="section-wide">
+  <div class="gallery">
+      <img src="../images/work-flowing-crowd-with-musical-notes-1.jpg" alt="Exhibition view 1">
+    <img src="../images/work-flowing-crowd-with-musical-notes-2.jpg" alt="Exhibition view 2">
+    <img src="../images/work-flowing-crowd-with-musical-notes-3.jpg" alt="Exhibition view 3">
+    <img src="../images/work-flowing-crowd-with-musical-notes-4.jpg" alt="Exhibition view 4">
+    <img src="../images/work-flowing-crowd-with-musical-notes-5.jpg" alt="Exhibition view 5">
+    <img src="../images/work-flowing-crowd-with-musical-notes-6.jpg" alt="Exhibition view 6">
+  </div>
+</section>
+
+<!-- ===== 3. VIDEO (optional / link-only) ===== -->
+<section class="section video-section" id="videoSection">
+  <h2 data-en="Video Documentation" data-zh="影片紀錄">Video Documentation</h2>
+  <p class="video-link">
+    <a href="" target="_blank" rel="noopener">
+      Watch video documentation →
+    </a>
+  </p>
+</section>
+
+<!-- ===== 4. CONCEPT ===== -->
+<section class="section concept">
+  <h2 data-en="Concept" data-zh="概念論述">Concept</h2>
+
+  <p data-en="'You and us, we are all in this world to mend something that has been broken. That's why we're here.' — John Berger. How can loneliness in a city be measured? How can people prevent loneliness from spreading?"
+     data-zh="『你和我們，我們都在這世上，為了修補一些已經破損的東西。這就是我們為何會出現的原因。』— 約翰・柏格。如何測量一座城市裡的孤獨？人們又如何防止孤獨蔓延？">
+     'You and us, we are all in this world to mend something that has been broken. That's why we're here.' — John Berger. How can loneliness in a city be measured? How can people prevent loneliness from spreading?
+  </p>
+
+  <p data-en="Based on ideas from music theory and harmony, the artist imagines each person as a note and seeks sounds that can resonate with one another. Using intelligent video recognition, the work analyzes the movement of people in real time and transforms pedestrian flow into improvised music, turning everyday space into a stage where everyone becomes a performer."
+     data-zh="基於音樂理論與和聲學的想法，藝術家想像每個人都如同一個音符，探索與自身能夠和諧發聲的對象，並與之共同編程一段完整的曲式，形成一段別具意義的關係。作品透過智慧影像辨識技術分析人的移動動態，與現場行人互動，並進行即時的資料運算與音樂生成，試圖將日常場域轉化成演出的舞台，將每個人都視為表演者的一份子。">
+     Based on ideas from music theory and harmony, the artist imagines each person as a note and seeks sounds that can resonate with one another. Using intelligent video recognition, the work analyzes the movement of people in real time and transforms pedestrian flow into improvised music, turning everyday space into a stage where everyone becomes a performer.
+  </p>
+
+  <p data-en="Instructions: users stand together inside the identification area in front of the screen. Once the system recognizes them, a five-minute concert begins, composed according to the crowd’s position, speed, and duration of movement."
+     data-zh="互動方式說明：使用者結伴一起站在螢幕前的辨識區域內，讓系統辨識完成後，即會開啟一場五分鐘的演奏會，根據現場人潮走動的位置、速度、時間等資料，共同編程一段即興的音樂。">
+     Instructions: users stand together inside the identification area in front of the screen. Once the system recognizes them, a five-minute concert begins, composed according to the crowd’s position, speed, and duration of movement.
+  </p>
+</section>
+
+<!-- ===== 5. ARTWORK INFO ===== -->
+<section class="section">
+  <h2 data-en="Artwork Information" data-zh="作品資訊">Artwork Information</h2>
+  <div class="info-grid">
+    <div class="info-label">Year</div><div>2022</div>
+    <div class="info-label">Medium</div><div data-en="Interactive intelligent image and music system, web camera, router, screen, speakers, audio interface, host, programming" data-zh="互動智慧影像音樂系統、網路攝影機、數據機、螢幕、音響、主機、程式編程">Interactive intelligent image and music system, web camera, router, screen, speakers, audio interface, host, programming</div>
+    <div class="info-label">Size</div><div data-en="Depend on the space" data-zh="依空間而定">Depend on the space</div>
+    <div class="info-label">Technical R&D</div><div data-en="Industrial Technology Research Institute, Intelligent Video Analytics Laboratory, Arts@ITRI Residency Program" data-zh="財團法人工業研究院智慧影像實驗室，藝術家進駐工研院創新研發計畫">Industrial Technology Research Institute, Intelligent Video Analytics Laboratory, Arts@ITRI Residency Program</div>
+    <div class="info-label">Project Info</div><div>https://youtu.be/fUrRw8CqXNk</div>
+    <div class="info-label">Artist</div><div>Wu Siou Ming</div>
+  </div>
+</section>
+
+<!-- ===== 6. EXHIBITIONS ===== -->
+<section class="section exhibitions">
+  <h2 data-en="Exhibitions" data-zh="展出履歷">Exhibitions</h2>
+  <ul>
+    <li>2023 — National Museum of Taiwan History, Taiwan</li>
+    <li>2023 — The Pier-2 Art Center, Taiwan</li>
+    <li>2022 — Taipei Performing Arts Center, Taiwan</li>
+    <li>2022 — Taoyuan Art x Technology Festival, Taiwan</li>
+  </ul>
+</section>
+
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-close" id="lightboxClose">×</div>
+  <img id="lightboxImg" alt="Expanded view">
+</div>
+
+<footer>
+© 2026 Wu Siou Ming — All Rights Reserved
+</footer>
+
+<script>
+/* ===== Auto Hide Video Section ===== */
+const videoSection = document.getElementById('videoSection');
+const videoLink = document.querySelector('.video-link a');
+if (!videoLink || !videoLink.getAttribute('href')) {
+  videoSection.style.display = "none";
+}
+
+
+/* ===== Lightbox ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src){
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+}
+function closeLightbox(){
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  if (lightboxImg) lightboxImg.src = '';
+}
+
+document.querySelectorAll('.gallery img').forEach(img=>{
+  img.addEventListener('click',()=>openLightbox(img.src));
+});
+if (lightbox){
+  lightbox.addEventListener('click',(e)=>{
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+if (lightboxClose){
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+document.addEventListener('keydown',(e)=>{
+  if (e.key === 'Escape') closeLightbox();
+});
+
+/* ===== Language Toggle ===== */
+let currentLang='en';
+function toggleLang(){
+  const btn=document.querySelector('.lang-toggle');
+  currentLang=currentLang==='en'?'zh':'en';
+  btn.textContent=currentLang==='en'?'中文':'EN';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+currentLang);
+  });
+  document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colored Lab — Wu Siou Ming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lato',sans-serif;color:#fff;background:#0b0b0d;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+/* ===== Unified Header ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  letter-spacing:1px
+}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{
+  font-size:.85rem;
+  opacity:.8;
+  transition:.3s
+}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  padding:.35rem .9rem;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.4);
+  font-size:.75rem;
+  cursor:pointer;
+  background:transparent;
+  color:#fff;
+  opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:#000;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('../images/work-colored-lab.jpg') center/cover no-repeat;
+  filter:brightness(.6);
+  transform:scale(1.05);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,.2),rgba(0,0,0,.85));
+}
+.hero-content{position:relative;z-index:2;padding:0 2rem}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.1rem;
+  letter-spacing:1.5px;
+  margin-bottom:1.4rem
+}
+.hero p{opacity:.7;letter-spacing:.5px}
+
+/* ===== Sections ===== */
+.section{max-width:980px;margin:auto;padding:6rem 2rem}
+.section-wide{max-width:1200px;margin:auto;padding:6rem 2rem}
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.1rem;
+  margin-bottom:2.2rem;
+  letter-spacing:1.2px
+}
+.section h2::before{
+  content:"";
+  display:block;
+  width:120px;
+  height:1px;
+  background:rgba(255,255,255,.12);
+  margin-bottom:1.2rem
+}
+
+/* ===== Gallery ===== */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.6rem
+}
+.gallery img{
+  width:calc(33% - 1rem);
+  border-radius:14px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:.6s;
+}
+.gallery img:hover{transform:scale(1.03)}
+@media(max-width:900px){.gallery img{width:calc(50% - 1rem)}}
+@media(max-width:600px){.gallery img{width:100%}}
+
+/* ===== Video ===== */
+.video-section{display:block}
+.video-container{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:14px;
+  overflow:hidden;
+}
+.video-container iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border:none;
+}
+
+
+.video-link a{
+  display:inline-block;
+  font-size:.9rem;
+  letter-spacing:.5px;
+  opacity:.7;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:.2rem;
+  transition:.3s
+}
+.video-link a:hover{opacity:1}
+
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:4vw
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:92vw;
+  max-height:88vh;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.5)
+}
+.lightbox-close{
+  position:fixed;
+  top:24px;right:28px;
+  font-size:1.6rem;
+  letter-spacing:2px;
+  opacity:.7;
+  cursor:pointer;
+  user-select:none
+}
+.lightbox-close:hover{opacity:1}
+
+/* ===== Concept ===== */
+.concept p{margin-bottom:1.8rem;opacity:.88}
+
+/* ===== Artwork Info ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:1.2rem 2.4rem;
+  opacity:.88;
+}
+.info-label{opacity:.5}
+
+/* ===== Exhibitions ===== */
+.exhibitions ul{list-style:none}
+.exhibitions li{margin-bottom:.8rem;opacity:.85}
+
+footer{
+  text-align:center;
+  padding:4rem 2rem;
+  font-size:.8rem;
+  opacity:.4
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:2.3rem}
+  .section h2{font-size:1.85rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Unified Nav ===== -->
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="../index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="../works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="../cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="../press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="../index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-en="Colored Lab" data-zh="彩色實驗室">Colored Lab</h1>
+    <p data-en="Interactive Installation • 2024"
+       data-zh="互動裝置 • 2024">
+       Interactive Installation • 2024
+    </p>
+  </div>
+</section>
+
+<!-- ===== 2. PHOTOS ===== -->
+<section class="section-wide">
+  <div class="gallery">
+    <img src="../images/work-colored-lab-1.jpg" alt="Exhibition view 1">
+    <img src="../images/work-colored-lab-2.jpg" alt="Exhibition view 2">
+    <img src="../images/work-colored-lab-3.jpg" alt="Exhibition view 3">
+    <img src="../images/work-colored-lab-4.jpg" alt="Exhibition view 4">
+  </div>
+</section>
+
+<!-- ===== 3. VIDEO (optional / link-only) ===== -->
+<section class="section video-section" id="videoSection">
+  <h2 data-en="Video Documentation" data-zh="影片紀錄">Video Documentation</h2>
+  <p class="video-link">
+    <a href="" target="_blank" rel="noopener">
+      Watch video documentation →
+    </a>
+  </p>
+</section>
+
+<!-- ===== 4. CONCEPT ===== -->
+<section class="section concept">
+  <h2 data-en="Concept" data-zh="概念論述">Concept</h2>
+
+  <div class="quote" data-en="Each and every one of us is profoundly unique. It is this very uniqueness that weaves diverse personalities and colors into our collective narrative, enriching the world we inhabit." 
+       data-zh="「我們每一個人，都是如此的獨一無二。正是如此，為整個故事構成了多樣的性格與色彩，也豐富了這個世界」。">
+    "Each and every one of us is profoundly unique. It is this very uniqueness that weaves diverse personalities and colors into our collective narrative, enriching the world we inhabit.
+  </div>
+
+  <div class="lang-content">
+    <p data-en="Shadow puppetry masterfully utilizes light and shadow behind the screen to accentuate characters at the forefront. Through subtle vocal modulations and masterful storytelling, the puppeteer breathes life into these silhouettes. By calling, shouting, speaking, and singing, a single performer inhabits multiple roles, imbuing every chapter of the story with distinct character and emotional resonance, unveiling the essence of each persona through the power of voice."
+       data-zh="皮影戲擅長運用幕後的光影，凸顯幕前的人物角色，操偶師運用精湛的聲音語調變化，為幕前的角色賦予一股生命力，並且讓故事栩栩如生，運用自己的聲音，呼、喊、說、唱，一人分飾多角，為故事的各個環節加上富有個性與情感的聲音表現，透過聲音表現出各個角色的特質與人物的故事。">
+       Shadow puppetry masterfully utilizes light and shadow behind the screen to accentuate characters at the forefront. Through subtle vocal modulations and masterful storytelling, the puppeteer breathes life into these silhouettes. By calling, shouting, speaking, and singing, a single performer inhabits multiple roles, imbuing every chapter of the story with distinct character and emotional resonance, unveiling the essence of each persona through the power of voice.    </p>
+    <p data-en="The artist shifts the focus onto the puppeteer, observing how they embody various roles and deliver lines through shifts in tone and inflection. Seeking an alternative perspective, the artist explores character identity through the lens of sound. Utilizing custom-developed software—powered by voice analysis and audio recognition technology—the artist analyzes vocal samples from different characters. By extracting and mapping these sonic parameters onto color data, the recorded voices are reimagined as visual spectrums. Through this scientific translation from sound data to chromatic forms, a new series of works is born. Through this creative journey, we observe the interplay of character traits, their voices, and their corresponding colors. By listening intently, we learn to recognize our differences, leading to a deeper understanding and tolerance of diverse qualities, ultimately celebrating the vibrant and multifaceted world we share."
+       data-zh="藝術家將焦點放到操偶師的身上，觀察操偶師傅如何透過聲音扮演各個角色、述說他們的台詞，如何運用不同聲調與語氣的變化展現差異的角色特質。藝術家試圖整理出一條另類的角度，從聲音的角度來認識各個角色的人物特質，透過自行開發的程式，以語音分析與音頻辨識的技術，針對不同角色的聲音樣本進行分析，讀取聲音樣本的資料內容並轉化資料的參數來運算色彩資料，以色彩的形式呈現紀錄的聲音。透過另一種科學分析的角度將聲音的資料形式轉換成色彩的型態，進行這個系列作品的創作。透過這個系列的創作，觀察不同的角色個性、他們的聲音與色彩的模樣，相信透過聆聽，可以認識到彼此的差異、進而理解與包容不同的人物特質，並且欣賞我們所在的這個豐富多采的世界。">
+       The artist shifts the focus onto the puppeteer, observing how they embody various roles and deliver lines through shifts in tone and inflection. Seeking an alternative perspective, the artist explores character identity through the lens of sound. Utilizing custom-developed software—powered by voice analysis and audio recognition technology—the artist analyzes vocal samples from different characters. By extracting and mapping these sonic parameters onto color data, the recorded voices are reimagined as visual spectrums. Through this scientific translation from sound data to chromatic forms, a new series of works is born. Through this creative journey, we observe the interplay of character traits, their voices, and their corresponding colors. By listening intently, we learn to recognize our differences, leading to a deeper understanding and tolerance of diverse qualities, ultimately celebrating the vibrant and multifaceted world we share.       </p>
+  </div>
+</section>
+
+<!-- ===== 5. ARTWORK INFO ===== -->
+<section class="section">
+  <h2 data-en="Artwork Information" data-zh="作品資訊">Artwork Information</h2>
+  <div class="info-grid">
+    <div class="info-label">Year</div><div>2024</div>
+    <div class="info-label">Medium</div><div>light boxes, digital output, electronic components</div>
+    <div class="info-label">Size</div><div>600 x 160 x 12 cm</div>
+    <div class="info-label">Note</div><div>Project info: https://gamma.app/docs/coloredlab-1r3bvskxyhtr38x</div>
+    <div class="info-label">Artist</div><div>Wu Siou Ming</div>
+  </div>
+</section>
+
+<!-- ===== 6. EXHIBITIONS ===== -->
+<section class="section exhibitions">
+  <h2 data-en="Exhibitions" data-zh="展出履歷">Exhibitions</h2>
+  <ul>
+    <li>2024 — Kaohsiung Museum of History, Taiwan</li>
+  </ul>
+</section>
+
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-close" id="lightboxClose">×</div>
+  <img id="lightboxImg" alt="Expanded view">
+</div>
+
+<footer>
+© 2026 Wu Siou Ming — All Rights Reserved
+</footer>
+
+<script>
+/* ===== Auto Hide Video Section ===== */
+const videoSection = document.getElementById('videoSection');
+const videoLink = document.querySelector('.video-link a');
+if (!videoLink || !videoLink.getAttribute('href')) {
+  videoSection.style.display = "none";
+}
+
+
+/* ===== Lightbox ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src){
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+}
+function closeLightbox(){
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  if (lightboxImg) lightboxImg.src = '';
+}
+
+document.querySelectorAll('.gallery img').forEach(img=>{
+  img.addEventListener('click',()=>openLightbox(img.src));
+});
+if (lightbox){
+  lightbox.addEventListener('click',(e)=>{
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+if (lightboxClose){
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+document.addEventListener('keydown',(e)=>{
+  if (e.key === 'Escape') closeLightbox();
+});
+
+/* ===== Language Toggle ===== */
+let currentLang='en';
+function toggleLang(){
+  const btn=document.querySelector('.lang-toggle');
+  currentLang=currentLang==='en'?'zh':'en';
+  btn.textContent=currentLang==='en'?'中文':'EN';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+currentLang);
+  });
+  document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>

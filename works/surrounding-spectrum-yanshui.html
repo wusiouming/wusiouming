@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surrounding Spectrum — Yanshui Township — Wu Siou Ming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lato',sans-serif;color:#fff;background:#0b0b0d;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+/* ===== Unified Header ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  letter-spacing:1px
+}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{
+  font-size:.85rem;
+  opacity:.8;
+  transition:.3s
+}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  padding:.35rem .9rem;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.4);
+  font-size:.75rem;
+  cursor:pointer;
+  background:transparent;
+  color:#fff;
+  opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:#000;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('../images/work-surrounding-spectrum-yanshui.jpg') center/cover no-repeat;
+  filter:brightness(.6);
+  transform:scale(1.05);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,.2),rgba(0,0,0,.85));
+}
+.hero-content{position:relative;z-index:2;padding:0 2rem}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.1rem;
+  letter-spacing:1.5px;
+  margin-bottom:1.4rem
+}
+.hero p{opacity:.7;letter-spacing:.5px}
+
+/* ===== Sections ===== */
+.section{max-width:980px;margin:auto;padding:6rem 2rem}
+.section-wide{max-width:1200px;margin:auto;padding:6rem 2rem}
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.1rem;
+  margin-bottom:2.2rem;
+  letter-spacing:1.2px
+}
+.section h2::before{
+  content:"";
+  display:block;
+  width:120px;
+  height:1px;
+  background:rgba(255,255,255,.12);
+  margin-bottom:1.2rem
+}
+
+/* ===== Gallery ===== */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.6rem
+}
+.gallery img{
+  width:calc(33% - 1rem);
+  border-radius:14px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:.6s;
+}
+.gallery img:hover{transform:scale(1.03)}
+@media(max-width:900px){.gallery img{width:calc(50% - 1rem)}}
+@media(max-width:600px){.gallery img{width:100%}}
+
+/* ===== Video ===== */
+.video-section{display:block}
+.video-container{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:14px;
+  overflow:hidden;
+}
+.video-container iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border:none;
+}
+
+
+.video-link a{
+  display:inline-block;
+  font-size:.9rem;
+  letter-spacing:.5px;
+  opacity:.7;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:.2rem;
+  transition:.3s
+}
+.video-link a:hover{opacity:1}
+
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:4vw
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:92vw;
+  max-height:88vh;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.5)
+}
+.lightbox-close{
+  position:fixed;
+  top:24px;right:28px;
+  font-size:1.6rem;
+  letter-spacing:2px;
+  opacity:.7;
+  cursor:pointer;
+  user-select:none
+}
+.lightbox-close:hover{opacity:1}
+
+/* ===== Concept ===== */
+.concept p{margin-bottom:1.8rem;opacity:.88}
+
+/* ===== Artwork Info ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:1.2rem 2.4rem;
+  opacity:.88;
+}
+.info-label{opacity:.5}
+
+/* ===== Exhibitions ===== */
+.exhibitions ul{list-style:none}
+.exhibitions li{margin-bottom:.8rem;opacity:.85}
+
+footer{
+  text-align:center;
+  padding:4rem 2rem;
+  font-size:.8rem;
+  opacity:.4
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:2.3rem}
+  .section h2{font-size:1.85rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Unified Nav ===== -->
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="../index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="../works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="../cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="../press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="../index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-en="Surrounding Spectrum — Yanshui Township" data-zh="周遭色譜——鹽水">Surrounding Spectrum — Yanshui Township</h1>
+    <p data-en="Digital Print, Videos, Booklets • 2021"
+       data-zh="數位輸出、影片、音樂、小書 • 2021">
+       Digital Print, Videos, Booklets • 2021
+    </p>
+  </div>
+</section>
+
+<!-- ===== 2. PHOTOS ===== -->
+<section class="section-wide">
+  <div class="gallery">
+    <img src="../images/work-surrounding-spectrum-yanshui-1.jpg" alt="Exhibition view 1">
+    <img src="../images/work-surrounding-spectrum-yanshui-2.jpg" alt="Exhibition view 2">
+    <img src="../images/work-surrounding-spectrum-yanshui-3.jpg" alt="Exhibition view 3">
+    <img src="../images/work-surrounding-spectrum-yanshui-4.jpg" alt="Exhibition view 4">
+    <img src="../images/work-surrounding-spectrum-yanshui-5.jpg" alt="Exhibition view 5">
+    <img src="../images/work-surrounding-spectrum-yanshui-6.jpg" alt="Exhibition view 6">
+  </div>
+</section>
+
+<!-- ===== 3. VIDEO (optional / link-only) ===== -->
+<section class="section video-section" id="videoSection">
+  <h2 data-en="Video Documentation" data-zh="影片紀錄">Video Documentation</h2>
+  <p class="video-link">
+    <a href="" target="_blank" rel="noopener">
+      Watch video documentation →
+    </a>
+  </p>
+</section>
+
+<!-- ===== 4. CONCEPT ===== -->
+<section class="section concept">
+  <h2 data-en="Concept" data-zh="概念論述">Concept</h2>
+
+  <p data-en="Surrounding Spectrum — Yanshui Township extends the artist’s long-term inquiry into landscape, perception, and sound. Working on site in Yanshui, the artist recorded local imagery and environmental sound, then translated the captured color information into structured digital audio through a custom program based on color theory and acoustics. The resulting AI-generated music is delicate, clear, and playfully unexpected; when viewers read the color models, they encounter a distinct melody embedded within the landscape."
+     data-zh="《景觀色譜——鹽水》延續藝術家對景觀、感知與聲音的長期探問。藝術家在鹽水實地考察，收錄當地影像與環境聲響，並以色彩學與聲學理論為基礎，透過自製程式將影像中的色彩資訊轉化為結構化的數位音訊。生成的 AI 音樂純淨而富含童趣，當觀者閱覽色彩模型時，便能發現其中蘊藏的獨特旋律。">
+     Surrounding Spectrum — Yanshui Township extends the artist’s long-term inquiry into landscape, perception, and sound. Working on site in Yanshui, the artist recorded local imagery and environmental sound, then translated the captured color information into structured digital audio through a custom program based on color theory and acoustics. The resulting AI-generated music is delicate, clear, and playfully unexpected; when viewers read the color models, they encounter a distinct melody embedded within the landscape.
+  </p>
+
+  <p data-en="Since 2018, the artist has focused on declining old business districts, military villages, and small towns marked by social change, using local images and sounds to re-read place value and historical memory. In this project, the investigation expands to Yanshui, one of the historical towns named in the sequence of 'one prefecture, two Lujhu, three Bangka, four Yuejin,' tracing the atmosphere of a town that has moved through prosperity and renewal."
+     data-zh="自 2018 年起，藝術家持續關注衰退中的舊商圈、眷村與受人口變遷影響的小鎮，透過在地影像與聲響重新詮釋地方價值與歷史記憶。本計畫將視野延伸至鹽水，回望『一府、二鹿、三艋舺、四月津』中的古鎮脈絡，探詢歷經繁榮與革新的街巷氣息。">
+     Since 2018, the artist has focused on declining old business districts, military villages, and small towns marked by social change, using local images and sounds to re-read place value and historical memory. In this project, the investigation expands to Yanshui, one of the historical towns named in the sequence of 'one prefecture, two Lujhu, three Bangka, four Yuejin,' tracing the atmosphere of a town that has moved through prosperity and renewal.
+  </p>
+
+  <p data-en="The installation was presented in the corridor-like space outside the exhibition rooms at Tainan Art Museum, echoing the bodily experience of moving through Yanshui’s old streets. Image spectrums, translucent color swatches, a Yuejin Harbor sound installation, and an interactive music-image program were arranged throughout the site. By incorporating interviews with returning youth and sound-image recordings from Yanshui’s alleyways, the work seeks to simulate the inner rhythm of return and to open a broader imaginative field through the integration of scientific analysis and artistic thought."
+     data-zh="展件安排於臺南美術館展間外牆富有巷弄意味的穿廊空間，對應人們穿梭鹽水老街的身體經驗。場域中設置鹽水影像色譜、透光色票、月津港聲響裝置，以及互動式音樂影像程式。藝術家並將返鄉青年訪談與當地巷弄所收錄之影像及聲響納入創作，藉由科學分析與藝術理念的結合，模擬返鄉者心中的旋律，召喚出更為多元的想像空間。">
+     The installation was presented in the corridor-like space outside the exhibition rooms at Tainan Art Museum, echoing the bodily experience of moving through Yanshui’s old streets. Image spectrums, translucent color swatches, a Yuejin Harbor sound installation, and an interactive music-image program were arranged throughout the site. By incorporating interviews with returning youth and sound-image recordings from Yanshui’s alleyways, the work seeks to simulate the inner rhythm of return and to open a broader imaginative field through the integration of scientific analysis and artistic thought.
+  </p>
+</section>
+
+<!-- ===== 5. ARTWORK INFO ===== -->
+<section class="section">
+  <h2 data-en="Artwork Information" data-zh="作品資訊">Artwork Information</h2>
+  <div class="info-grid">
+    <div class="info-label">Year</div><div>2021</div>
+    <div class="info-label">Medium</div>
+    <div data-en="Digital print, videos, booklets" data-zh="數位輸出、影片、音樂、小書">Digital print, videos, booklets</div>
+    <div class="info-label">Venue</div>
+    <div data-en="Tainan Art Museum" data-zh="臺南美術館">Tainan Art Museum</div>
+    <div class="info-label">Artist</div><div>Wu Siou Ming</div>
+  </div>
+</section>
+
+<!-- ===== 6. EXHIBITIONS ===== -->
+<section class="section exhibitions">
+  <h2 data-en="Exhibitions" data-zh="展出履歷">Exhibitions</h2>
+  <ul>
+    <li>2021 — Tainan Art Museum, Taiwan</li>
+  </ul>
+</section>
+
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-close" id="lightboxClose">×</div>
+  <img id="lightboxImg" alt="Expanded view">
+</div>
+
+<footer>
+© 2026 Wu Siou Ming — All Rights Reserved
+</footer>
+
+<script>
+/* ===== Auto Hide Video Section ===== */
+const videoSection = document.getElementById('videoSection');
+const videoLink = document.querySelector('.video-link a');
+if (!videoLink || !videoLink.getAttribute('href')) {
+  videoSection.style.display = "none";
+}
+
+
+/* ===== Lightbox ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src){
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+}
+function closeLightbox(){
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  if (lightboxImg) lightboxImg.src = '';
+}
+
+document.querySelectorAll('.gallery img').forEach(img=>{
+  img.addEventListener('click',()=>openLightbox(img.src));
+});
+if (lightbox){
+  lightbox.addEventListener('click',(e)=>{
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+if (lightboxClose){
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+document.addEventListener('keydown',(e)=>{
+  if (e.key === 'Escape') closeLightbox();
+});
+
+/* ===== Language Toggle ===== */
+let currentLang='en';
+function toggleLang(){
+  const btn=document.querySelector('.lang-toggle');
+  currentLang=currentLang==='en'?'zh':'en';
+  btn.textContent=currentLang==='en'?'中文':'EN';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+currentLang);
+  });
+  document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>

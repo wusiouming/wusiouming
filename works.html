@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works — Wu Siou Ming</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:#0b0b0d;color:#fff}
+a{color:inherit;text-decoration:none}
+
+/* ===== Unified Header ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:1200px;margin:auto;
+  padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;letter-spacing:1px
+}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{font-size:.85rem;opacity:.8;transition:.3s}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  background:transparent;border:1px solid rgba(255,255,255,.3);
+  color:#fff;padding:.35rem .9rem;border-radius:20px;
+  font-size:.75rem;cursor:pointer;opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  padding-top:160px;
+  padding-bottom:120px;
+  text-align:center;
+  background:linear-gradient(to bottom,#111,#0b0b0d)
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;
+  letter-spacing:2px;
+  margin-bottom:1.4rem
+}
+.hero p{opacity:.55;letter-spacing:.5px}
+
+/* ===== Layout ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 2rem 7rem
+}
+
+/* ===== Curatorial Section ===== */
+.curatorial-section{
+  margin-top:7rem;
+  margin-bottom:3.5rem;
+  position:relative;
+  padding-top:2.5rem;
+}
+.curatorial-section:first-child{margin-top:4rem}
+.curatorial-section::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;
+  width:120px;height:1px;
+  background:rgba(255,255,255,.12);
+}
+.section-label{
+  font-size:.75rem;
+  letter-spacing:2px;
+  opacity:.4;
+  margin-bottom:.9rem
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:2.1rem;
+  letter-spacing:1px;
+  margin-bottom:1.8rem
+}
+.section-desc{
+  max-width:720px;
+  line-height:1.9;
+  opacity:.58;
+  margin-bottom:3.5rem
+}
+
+/* ===== Horizontal Wall ===== */
+.section-track{position:relative}
+.section-track::before,
+.section-track::after{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;
+  width:80px;
+  pointer-events:none;
+  z-index:2
+}
+.section-track::before{
+  left:0;
+  background:linear-gradient(90deg,#0b0b0d,rgba(11,11,13,0))
+}
+.section-track::after{
+  right:0;
+  background:linear-gradient(-90deg,#0b0b0d,rgba(11,11,13,0))
+}
+.section-scroll{
+  display:flex;
+  gap:2rem;
+  overflow-x:auto;
+  padding:0.5rem 0 1.2rem;
+  scroll-behavior:smooth
+}
+.section-scroll::-webkit-scrollbar{height:8px}
+.section-scroll::-webkit-scrollbar-thumb{background:#2b2b2b;border-radius:4px}
+.track-controls{
+  display:flex;
+  justify-content:flex-end;
+  gap:.6rem;
+  margin-bottom:.9rem;
+}
+.track-btn{
+  width:2.4rem;
+  height:2.4rem;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);
+  color:#fff;
+  font-size:1rem;
+  line-height:1;
+  cursor:pointer;
+  opacity:.75;
+  transition:.25s;
+}
+.track-btn:hover{opacity:1;background:rgba(255,255,255,.08)}
+
+/* ===== Card ===== */
+.card{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  background:#111;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,.35)
+}
+.card{
+  min-width:320px;
+  height:400px;
+  flex-shrink:0
+}
+.card img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .9s ease
+}
+.card:hover img{transform:scale(1.04)}
+
+.card-overlay{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:1.4rem 1.4rem 1.6rem;
+  background:linear-gradient(to top,rgba(0,0,0,.85),transparent)
+}
+.card-title{font-size:1.08rem;margin-bottom:.5rem;letter-spacing:.3px}
+.card-meta{font-size:.8rem;opacity:.6}
+.card-tags{font-size:.7rem;opacity:.45;margin-top:.5rem}
+
+@media(max-width:900px){
+  .section-title{font-size:1.85rem}
+  .card{min-width:70vw;height:60vw}
+}
+
+/* ===== Footer ===== */
+footer{
+  text-align:center;
+  padding:4rem 2rem;
+  font-size:.8rem;
+  opacity:.4
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 data-en="Works" data-zh="作品">Works</h1>
+  <p data-en="Curatorial Selection" data-zh="策展精選">Curatorial Selection</p>
+</section>
+
+<section class="container" id="worksContainer"></section>
+
+<footer>
+© 2026 Wu Siou Ming — All Rights Reserved
+</footer>
+
+<script src="works-data.js"></script>
+
+<script>
+const container = document.getElementById('worksContainer');
+
+const sections = [
+  {
+    key:'environment',
+    labelEN:'PRACTICE TRAJECTORY I',
+    labelZH:'創作脈絡一',
+    titleEN:'Sensing Environments',
+    titleZH:'環境感知',
+    descEN:'Investigating how environments become perceptual interfaces through sound and spatial sensing.',
+    descZH:'探索環境如何透過聲音與空間感測轉化為感知介面。'
+  },
+  {
+    key:'sonic',
+    labelEN:'PRACTICE TRAJECTORY II',
+    labelZH:'創作脈絡二',
+    titleEN:'Sound as Political Medium',
+    titleZH:'聲音政治',
+    descEN:'Sound as a medium of power, conflict, and collective consciousness.',
+    descZH:'聲音作為權力、衝突與集體意識的媒介。'
+  },
+  {
+    key:'system',
+    labelEN:'PRACTICE TRAJECTORY III',
+    labelZH:'創作脈絡三',
+    titleEN:'Systemic Conditions & Power',
+    titleZH:'系統批判',
+    descEN:'Critical reflections on digital infrastructures and invisible systems shaping behavior.',
+    descZH:'對形塑行為的數位基礎建設與隱形系統進行批判性反思。'
+  }
+];
+
+function renderSection(section){
+  const worksInSection = works
+    .filter(w=>w.curatorialSection===section.key)
+    .sort((a,b)=>{
+      const yearA = Math.max(...String(a.year).match(/\d{4}/g).map(Number));
+      const yearB = Math.max(...String(b.year).match(/\d{4}/g).map(Number));
+      if (yearA !== yearB) return yearB - yearA;
+      return a.curatorialOrder - b.curatorialOrder;
+    });
+
+  if(!worksInSection.length) return;
+
+  container.innerHTML += `
+    <div class="curatorial-section">
+      <div class="section-label" data-en="${section.labelEN}" data-zh="${section.labelZH}">
+        ${section.labelEN}
+      </div>
+      <div class="section-title" data-en="${section.titleEN}" data-zh="${section.titleZH}">
+        ${section.titleEN}
+      </div>
+      <div class="section-desc" data-en="${section.descEN}" data-zh="${section.descZH}">
+        ${section.descEN}
+      </div>
+      <div class="track-controls">
+        <button class="track-btn" type="button" data-target="${section.key}" data-scroll="prev" aria-label="Scroll previous">←</button>
+        <button class="track-btn" type="button" data-target="${section.key}" data-scroll="next" aria-label="Scroll next">→</button>
+      </div>
+      <div class="section-track">
+        <div class="section-scroll" id="scroll-${section.key}">
+        ${worksInSection.map(w=>`
+          <a class="card" href="${w.url}">
+            <img src="${w.image}" alt="${w.title}" loading="lazy">
+            <div class="card-overlay">
+              <div class="card-title">${w.title}</div>
+              <div class="card-meta">${w.category} • ${w.year}</div>
+              <div class="card-tags">${w.tags||''}</div>
+            </div>
+          </a>
+        `).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+sections.forEach(renderSection);
+
+document.querySelectorAll('.track-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const sectionKey = btn.getAttribute('data-target');
+    const dir = btn.getAttribute('data-scroll');
+    const scroller = document.getElementById(`scroll-${sectionKey}`);
+    if (!scroller) return;
+    const amount = Math.max(320, Math.floor(scroller.clientWidth * 0.82));
+    scroller.scrollBy({ left: dir === 'next' ? amount : -amount, behavior: 'smooth' });
+  });
+});
+</script>
+
+<script>
+let currentLang='en';
+function toggleLang(){
+  const btn=document.querySelector('.lang-toggle');
+  currentLang=currentLang==='en'?'zh':'en';
+  btn.textContent=currentLang==='en'?'中文':'EN';
+
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+currentLang);
+  });
+
+  document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>

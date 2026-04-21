@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Portal: Realms of Mountains and Seas — Wu Siou Ming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lato',sans-serif;color:#fff;background:#0b0b0d;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+/* ===== Unified Header ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  letter-spacing:1px
+}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{
+  font-size:.85rem;
+  opacity:.8;
+  transition:.3s
+}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  padding:.35rem .9rem;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.4);
+  font-size:.75rem;
+  cursor:pointer;
+  background:transparent;
+  color:#fff;
+  opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:#000;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('../images/work-portal-hero.jpg') center/cover no-repeat;
+  filter:brightness(.6);
+  transform:scale(1.05);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,.2),rgba(0,0,0,.85));
+}
+.hero-content{position:relative;z-index:2;padding:0 2rem}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.1rem;
+  letter-spacing:1.5px;
+  margin-bottom:1.4rem
+}
+.hero p{opacity:.7;letter-spacing:.5px}
+
+/* ===== Sections ===== */
+.section{max-width:980px;margin:auto;padding:6rem 2rem}
+.section-wide{max-width:1200px;margin:auto;padding:6rem 2rem}
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.1rem;
+  margin-bottom:2.2rem;
+  letter-spacing:1.2px
+}
+.section h2::before{
+  content:"";
+  display:block;
+  width:120px;
+  height:1px;
+  background:rgba(255,255,255,.12);
+  margin-bottom:1.2rem
+}
+
+/* ===== Gallery ===== */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.6rem
+}
+.gallery img{
+  width:calc(33% - 1rem);
+  border-radius:14px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:.6s;
+}
+.gallery img:hover{transform:scale(1.03)}
+@media(max-width:900px){.gallery img{width:calc(50% - 1rem)}}
+@media(max-width:600px){.gallery img{width:100%}}
+
+/* ===== Video ===== */
+.video-section{display:block}
+.video-container{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:14px;
+  overflow:hidden;
+}
+.video-container iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border:none;
+}
+.video-link a{
+  display:inline-block;
+  font-size:.9rem;
+  letter-spacing:.5px;
+  opacity:.7;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:.2rem;
+  transition:.3s
+}
+.video-link a:hover{opacity:1}
+
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:4vw
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:92vw;
+  max-height:88vh;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.5)
+}
+.lightbox-close{
+  position:fixed;
+  top:24px;right:28px;
+  font-size:1.6rem;
+  letter-spacing:2px;
+  opacity:.7;
+  cursor:pointer;
+  user-select:none
+}
+.lightbox-close:hover{opacity:1}
+
+/* ===== Concept ===== */
+.concept p{margin-bottom:1.8rem;opacity:.88}
+
+/* ===== Artwork Info ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:1.2rem 2.4rem;
+  opacity:.88;
+}
+.info-label{opacity:.5}
+
+/* ===== Exhibitions ===== */
+.exhibitions ul{list-style:none}
+.exhibitions li{margin-bottom:.8rem;opacity:.85}
+
+footer{
+  text-align:center;
+  padding:4rem 2rem;
+  font-size:.8rem;
+  opacity:.4
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:2.3rem}
+  .section h2{font-size:1.85rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Unified Nav ===== -->
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="../index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="../works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="../cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="../press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="../index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-en="The Portal: Realms of Mountains and Seas" data-zh="門戶：山海之境">
+      The Portal: Realms of Mountains and Seas
+    </h1>
+    <p data-en="Immersive Installation • 2025"
+       data-zh="沉浸式裝置 • 2025">
+       Immersive Installation • 2025
+    </p>
+  </div>
+</section>
+
+<!-- ===== 2. PHOTOS ===== -->
+<section class="section-wide">
+  <div class="gallery">
+    <img src="../images/work-portal-1.jpg" alt="Exhibition view 1">
+    <img src="../images/work-portal-2.jpg" alt="Exhibition view 2">
+    <img src="../images/work-portal-3.jpg" alt="Exhibition view 3">
+    <img src="../images/work-portal-4.jpg" alt="Exhibition view 4">
+    <img src="../images/work-portal-5.jpg" alt="Exhibition view 5">
+  </div>
+</section>
+
+<!-- ===== 3. VIDEO (optional / link-only) ===== -->
+<section class="section video-section" id="videoSection">
+  <h2 data-en="Video Documentation" data-zh="影片紀錄">Video Documentation</h2>
+  <p class="video-link">
+    <a href="" target="_blank" rel="noopener">
+      Watch video documentation →
+    </a>
+  </p>
+</section>
+
+<!-- ===== 4. CONCEPT ===== -->
+<section class="section concept">
+  <h2 data-en="Concept" data-zh="概念論述">Concept</h2>
+
+  <p data-en="Longci is known for the Gutingkeng Formation mudstone, once deep-sea sediments uplifted by orogeny into a rare badlands landscape. The infertile, erosion-prone slopes form stark cliffs while sustaining fragile ecosystems such as Niupu Farm Pond and Longji. Visible gravel layers testify to geological shifts around five million years ago, making Longci a key site for studying Taiwan’s geological and ecological evolution and now designated as a national geopark and nature reserve. The Portal was developed within this context. A door that can be opened forms the installation’s core, symbolizing human imagination of time, space, and the unknown. When visitors open the door, they encounter imagery that evokes an ancient seabed, accompanied by low-frequency flowing sound, briefly suspending reality and entering a perceptual experience of strata, ocean, and time."
+     data-zh="龍崎地區以古亭坑層泥岩地質聞名，這些地層原為深海沉積物，經歷造山運動抬升後形成今日全球罕見的泥岩惡地（月世界地形）。其土質貧瘠、遇水易流失，造就出光禿而陡峭的山壁，同時也孕育出豐富而脆弱的生態系，如牛埔農塘、龍脊等重要地景。地層中清晰可見的礫石層，更見證了約五百萬年前的地質變動與抬升歷程，使龍崎成為研究台灣地質演化與生態變遷的重要場域，並已劃設為國家級地質公園與自然保留區。《任意門》正是在這樣的背景下發展而成。作品以一扇可被開啟的門作為裝置核心，象徵人類對時空與未知的想像。當觀眾推開門扉，眼前呈現的是彷彿置身古代海底的影像畫面，伴隨低頻流動的聲音環境，讓人短暫脫離現實，進入一段關於地層、海洋與時間的感知體驗。">
+     Longci is known for the Gutingkeng Formation mudstone, once deep-sea sediments uplifted by orogeny into a rare badlands landscape. The infertile, erosion-prone slopes form stark cliffs while sustaining fragile ecosystems such as Niupu Farm Pond and Longji. Visible gravel layers testify to geological shifts around five million years ago, making Longci a key site for studying Taiwan’s geological and ecological evolution and now designated as a national geopark and nature reserve. The Portal was developed within this context. A door that can be opened forms the installation’s core, symbolizing human imagination of time, space, and the unknown. When visitors open the door, they encounter imagery that evokes an ancient seabed, accompanied by low-frequency flowing sound, briefly suspending reality and entering a perceptual experience of strata, ocean, and time.
+  </p>
+
+  <p data-en="Drawing on locally recorded environmental sounds and the idea of “sonic archaeology,” the artist imagines how Longci might have sounded across different geological eras. The work does not reconstruct a single historical scene; instead, it juxtaposes imagined ancient ocean soundscapes with present-day mountain and forest sounds, forming a time sequence that spans millions of years and foregrounds the land’s continual transformation. Through a simple, direct interaction, The Portal turns abstract geological time into a bodily experience, responding to contemporary concerns about environmental change and land protection. It invites viewers to reconsider what this landscape once was, and how today’s choices shape the memories left for the future. The artist’s long-term focus on sound, space, and social change extends here into an environmental inquiry that lets audiences stand briefly at a confluence of time, listening to the dialogue between mountain and sea."
+     data-zh="在內容的設計上，藝術家以當地採集的環境聲音為基礎，結合「聲音考古學」的概念，推演龍崎在不同地質年代中可能存在的各種環境樣貌。這些影像與聲音並非復原單一歷史場景，而是將遠古海洋的想像聲場，與現今山林的自然聲響並置，形成一條跨越數百萬年的時間序列，讓觀眾在聆聽中意識到土地不斷變動的本質。透過簡單而直接的互動方式，《任意門》將抽象的地質時間轉化為可被身體感知的經驗，也回應當代對環境變遷與土地保護的關注。作品邀請觀眾重新思考：我們所站立的地景，曾經是什麼樣貌？而今日的選擇，又將如何影響未來被留下的記憶。藝術家吳修銘長期關注聲音、空間與社會變遷之間的關係，這次的作品延續其對環境議題的探問，將抽象的地質時間轉化為可被感知的身體經驗。透過這件作品，觀眾不只是觀看一段影像，而是短暫地站在時間的交會點上，聆聽山與海彼此回應的聲音。">
+     Drawing on locally recorded environmental sounds and the idea of “sonic archaeology,” the artist imagines how Longci might have sounded across different geological eras. The work does not reconstruct a single historical scene; instead, it juxtaposes imagined ancient ocean soundscapes with present-day mountain and forest sounds, forming a time sequence that spans millions of years and foregrounds the land’s continual transformation. Through a simple, direct interaction, The Portal turns abstract geological time into a bodily experience, responding to contemporary concerns about environmental change and land protection. It invites viewers to reconsider what this landscape once was, and how today’s choices shape the memories left for the future. The artist’s long-term focus on sound, space, and social change extends here into an environmental inquiry that lets audiences stand briefly at a confluence of time, listening to the dialogue between mountain and sea.
+  </p>
+</section>
+
+<!-- ===== 5. ARTWORK INFO ===== -->
+<section class="section">
+  <h2 data-en="Artwork Information" data-zh="作品資訊">Artwork Information</h2>
+  <div class="info-grid">
+    <div class="info-label">Year</div><div>2025</div>
+    <div class="info-label">Medium</div><div>Interactive installation, screen, host, speaker, wooden structure</div>
+    <div class="info-label">Size</div><div>120 x 120 x 230 cm</div>
+    <div class="info-label">Artist</div><div>Wu Siou Ming</div>
+  </div>
+</section>
+
+<!-- ===== 6. EXHIBITIONS ===== -->
+<section class="section exhibitions">
+  <h2 data-en="Exhibitions" data-zh="展出履歷">Exhibitions</h2>
+  <ul>
+    <li>2026 — Longci Light Festival, Tainan, Taiwan</li>
+  </ul>
+</section>
+
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-close" id="lightboxClose">×</div>
+  <img id="lightboxImg" alt="Expanded view">
+</div>
+
+<footer>
+© 2026 Wu Siou Ming — All Rights Reserved
+</footer>
+
+<script>
+/* ===== Auto Hide Video Section ===== */
+const videoSection = document.getElementById('videoSection');
+const videoLink = document.querySelector('.video-link a');
+if (!videoLink || !videoLink.getAttribute('href')) {
+  videoSection.style.display = "none";
+}
+
+
+/* ===== Lightbox ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src){
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+}
+function closeLightbox(){
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  if (lightboxImg) lightboxImg.src = '';
+}
+
+document.querySelectorAll('.gallery img').forEach(img=>{
+  img.addEventListener('click',()=>openLightbox(img.src));
+});
+if (lightbox){
+  lightbox.addEventListener('click',(e)=>{
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+if (lightboxClose){
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+document.addEventListener('keydown',(e)=>{
+  if (e.key === 'Escape') closeLightbox();
+});
+
+/* ===== Language Toggle ===== */
+let currentLang='en';
+function toggleLang(){
+  const btn=document.querySelector('.lang-toggle');
+  currentLang=currentLang==='en'?'zh':'en';
+  btn.textContent=currentLang==='en'?'中文':'EN';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+currentLang);
+  });
+  document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surrounding Spectrum — Lequn Village, Huayin Street, Xiluo Township — Wu Siou Ming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lato',sans-serif;color:#fff;background:#0b0b0d;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+/* ===== Unified Header ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  letter-spacing:1px
+}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{
+  font-size:.85rem;
+  opacity:.8;
+  transition:.3s
+}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  padding:.35rem .9rem;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.4);
+  font-size:.75rem;
+  cursor:pointer;
+  background:transparent;
+  color:#fff;
+  opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:#000;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('../images/work-surrounding-spectrum-lequn.jpg') center/cover no-repeat;
+  filter:brightness(.6);
+  transform:scale(1.05);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,.2),rgba(0,0,0,.85));
+}
+.hero-content{position:relative;z-index:2;padding:0 2rem}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.1rem;
+  letter-spacing:1.5px;
+  margin-bottom:1.4rem
+}
+.hero p{opacity:.7;letter-spacing:.5px}
+
+/* ===== Sections ===== */
+.section{max-width:980px;margin:auto;padding:6rem 2rem}
+.section-wide{max-width:1200px;margin:auto;padding:6rem 2rem}
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.1rem;
+  margin-bottom:2.2rem;
+  letter-spacing:1.2px
+}
+.section h2::before{
+  content:"";
+  display:block;
+  width:120px;
+  height:1px;
+  background:rgba(255,255,255,.12);
+  margin-bottom:1.2rem
+}
+
+/* ===== Gallery ===== */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.6rem
+}
+.gallery img{
+  width:calc(33% - 1rem);
+  border-radius:14px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:.6s;
+}
+.gallery img:hover{transform:scale(1.03)}
+@media(max-width:900px){.gallery img{width:calc(50% - 1rem)}}
+@media(max-width:600px){.gallery img{width:100%}}
+
+/* ===== Video ===== */
+.video-section{display:block}
+.video-container{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:14px;
+  overflow:hidden;
+}
+.video-container iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border:none;
+}
+
+
+.video-link a{
+  display:inline-block;
+  font-size:.9rem;
+  letter-spacing:.5px;
+  opacity:.7;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:.2rem;
+  transition:.3s
+}
+.video-link a:hover{opacity:1}
+
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:4vw
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:92vw;
+  max-height:88vh;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.5)
+}
+.lightbox-close{
+  position:fixed;
+  top:24px;right:28px;
+  font-size:1.6rem;
+  letter-spacing:2px;
+  opacity:.7;
+  cursor:pointer;
+  user-select:none
+}
+.lightbox-close:hover{opacity:1}
+
+/* ===== Concept ===== */
+.concept p{margin-bottom:1.8rem;opacity:.88}
+
+/* ===== Artwork Info ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:1.2rem 2.4rem;
+  opacity:.88;
+}
+.info-label{opacity:.5}
+
+/* ===== Exhibitions ===== */
+.exhibitions ul{list-style:none}
+.exhibitions li{margin-bottom:.8rem;opacity:.85}
+
+footer{
+  text-align:center;
+  padding:4rem 2rem;
+  font-size:.8rem;
+  opacity:.4
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:2.3rem}
+  .section h2{font-size:1.85rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Unified Nav ===== -->
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="../index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="../works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="../cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="../press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="../index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-en="Surrounding Spectrum — Lequn Village, Huayin Street, Xiluo Township" data-zh="周遭色譜——樂群村、華陰街、西螺鎮">Surrounding Spectrum — Lequn Village, Huayin Street, Xiluo Township</h1>
+    <p data-en="Field Survey & Digital Output • 2019"
+       data-zh="田野調查與數位輸出 • 2019">
+       Field Survey & Digital Output • 2019
+    </p>
+  </div>
+</section>
+
+<!-- ===== 2. PHOTOS ===== -->
+<section class="section-wide">
+  <div class="gallery">
+    <img src="../images/work-surrounding-spectrum-lequn-1.jpg" alt="Exhibition view 1">
+    <img src="../images/work-surrounding-spectrum-lequn-2.jpg" alt="Exhibition view 2">
+    <img src="../images/work-surrounding-spectrum-lequn-3.jpg" alt="Exhibition view 3">
+    <img src="../images/work-surrounding-spectrum-lequn-4.jpg" alt="Exhibition view 4">
+    <img src="../images/work-surrounding-spectrum-lequn-5.jpg" alt="Exhibition view 5">
+    <img src="../images/work-surrounding-spectrum-lequn-6.jpg" alt="Exhibition view 6">
+  </div>
+</section>
+
+<!-- ===== 3. VIDEO (optional / link-only) ===== -->
+<section class="section video-section" id="videoSection">
+  <h2 data-en="Video Documentation" data-zh="影片紀錄">Video Documentation</h2>
+  <p class="video-link">
+    <a href="" target="_blank" rel="noopener">
+      Watch video documentation →
+    </a>
+  </p>
+</section>
+
+<!-- ===== 4. CONCEPT ===== -->
+<section class="section concept">
+  <h2 data-en="Concept" data-zh="概念論述">Concept</h2>
+
+  <p data-en="Surrounding Spectrum is a long-term project that reads street and environmental landscapes from visual and auditory perspectives, constructing a renewed understanding of environmental aesthetics through systematic observation. By translating landscape imagery into color tickets and music through program analysis, the artist explores the sensory structure shared by environments and residents. The images of village landscapes are loaded into a custom program, which captures color information and uses color parameters to build digital audio, automatically generating AI music. In this way, every image and every landscape carries an inner melody that can be heard."
+     data-zh="《景觀色譜》是一項長期計畫，從視覺與聽覺的角度閱讀街道與環境景觀，並透過系統性的觀察，重新建構對環境美感的理解。藝術家將地景影像轉譯為色票與音樂，探問環境與居民之間的感知結構。作品將村落環境影像載入自製程式中，由程式擷取畫面中的色彩資訊，並以不同色彩參數建構數位音訊，自動生成 AI 音樂。於是，每一張影像、每一片景觀都擁有其內在的旋律，等待被聆聽。">
+     Surrounding Spectrum is a long-term project that reads street and environmental landscapes from visual and auditory perspectives, constructing a renewed understanding of environmental aesthetics through systematic observation. By translating landscape imagery into color tickets and music through program analysis, the artist explores the sensory structure shared by environments and residents. The images of village landscapes are loaded into a custom program, which captures color information and uses color parameters to build digital audio, automatically generating AI music. In this way, every image and every landscape carries an inner melody that can be heard.
+  </p>
+
+  <p data-en="Since 2018, the artist has developed and deepened this project through fieldwork in Lequn Village, Huayin Street, and Xiluo Township. These three sites represent a military village that could not be preserved, a declining old commercial district, and an increasingly aging small town. The work seeks a new perceptual angle from which to read the historical contexts of these places and translate them into vivid music, so that gradually buried memories can be brought forward again."
+     data-zh="這是藝術家始於 2018 年開發並深耕的計畫，陸續在樂群村、華陰街、西螺鎮等地踏查。三地分別對應著無力保存的眷村、衰頹的舊商圈與日益老化的小鎮。藝術家期望以新的感知角度閱讀基地舊有的脈絡，將其轉譯成生動的音樂，鋪陳逐漸被埋沒的記憶。">
+     Since 2018, the artist has developed and deepened this project through fieldwork in Lequn Village, Huayin Street, and Xiluo Township. These three sites represent a military village that could not be preserved, a declining old commercial district, and an increasingly aging small town. The work seeks a new perceptual angle from which to read the historical contexts of these places and translate them into vivid music, so that gradually buried memories can be brought forward again.
+  </p>
+
+  <p data-en="Through literature review and interviews, the artist documents local life experiences in text, while also photographing the streetscape. The images are analyzed by a self-developed program that extracts color parameters and converts them into audio based on color theory and acoustics. Each image therefore has its own inner melody, and every streetscape becomes a song. The written fragments of daily life function like lyrics, aiming to present a layered portrait of environmental perception interwoven with lived experience."
+     data-zh="一方面，藝術家透過文獻與訪談以文字紀錄當地的生活經驗；另一方面，以攝影記錄街景。再以自行開發的程式分析影像，擷取其中的色彩參數，並依據色彩學與聲學基礎，將數值轉化為音訊並生成 AI 音樂。因此，每張影像都有其內在的旋律可以被聽見，每幅街景都是一首歌。結合生活經驗的文字書寫，彷彿歌詞一般，企圖呈現地方環境感知與生活經驗片段交織的樣貌。">
+     Through literature review and interviews, the artist documents local life experiences in text, while also photographing the streetscape. The images are analyzed by a self-developed program that extracts color parameters and converts them into audio based on color theory and acoustics. Each image therefore has its own inner melody, and every streetscape becomes a song. The written fragments of daily life function like lyrics, aiming to present a layered portrait of environmental perception interwoven with lived experience.
+  </p>
+</section>
+
+<!-- ===== 5. ARTWORK INFO ===== -->
+<section class="section">
+  <h2 data-en="Artwork Information" data-zh="作品資訊">Artwork Information</h2>
+  <div class="info-grid">
+    <div class="info-label">Year</div><div>2019</div>
+    <div class="info-label">Medium</div>
+    <div data-en="Photography, digital output, screen, host computer, headphones, printed materials, fabric curtain, custom program"
+         data-zh="攝影、數位輸出、螢幕、主機、耳機、印刷品、布幔、自訂程式">
+      Photography, digital output, screen, host computer, headphones, printed materials, fabric curtain, custom program
+    </div>
+    <div class="info-label">Size</div><div>800 x 160 x 220 cm</div>
+    <div class="info-label">Artist</div><div>Wu Siou Ming</div>
+  </div>
+</section>
+
+<!-- ===== 6. EXHIBITIONS ===== -->
+<section class="section exhibitions">
+  <h2 data-en="Exhibitions" data-zh="展出履歷">Exhibitions</h2>
+  <ul>
+    <li>2019 — National Taiwan Museum of Fine Arts, Taiwan</li>
+  </ul>
+</section>
+
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-close" id="lightboxClose">×</div>
+  <img id="lightboxImg" alt="Expanded view">
+</div>
+
+<footer>
+© 2026 Wu Siou Ming — All Rights Reserved
+</footer>
+
+<script>
+/* ===== Auto Hide Video Section ===== */
+const videoSection = document.getElementById('videoSection');
+const videoLink = document.querySelector('.video-link a');
+if (!videoLink || !videoLink.getAttribute('href')) {
+  videoSection.style.display = "none";
+}
+
+
+/* ===== Lightbox ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src){
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+}
+function closeLightbox(){
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  if (lightboxImg) lightboxImg.src = '';
+}
+
+document.querySelectorAll('.gallery img').forEach(img=>{
+  img.addEventListener('click',()=>openLightbox(img.src));
+});
+if (lightbox){
+  lightbox.addEventListener('click',(e)=>{
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+if (lightboxClose){
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+document.addEventListener('keydown',(e)=>{
+  if (e.key === 'Escape') closeLightbox();
+});
+
+/* ===== Language Toggle ===== */
+let currentLang='en';
+function toggleLang(){
+  const btn=document.querySelector('.lang-toggle');
+  currentLang=currentLang==='en'?'zh':'en';
+  btn.textContent=currentLang==='en'?'中文':'EN';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+currentLang);
+  });
+  document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>

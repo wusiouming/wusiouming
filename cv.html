@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Wu Siou Ming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lato',sans-serif;background:#0b0b0d;color:#eaeaea;line-height:1.9}
+a{color:inherit;text-decoration:none}
+
+/* ===== Nav (Unified) ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06)
+}
+.nav{
+  max-width:1200px;margin:auto;padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{font-family:'Playfair Display',serif;font-size:1.1rem;letter-spacing:1px}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{font-size:.85rem;opacity:.8;transition:.3s}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  padding:.35rem .9rem;border-radius:20px;
+  border:1px solid rgba(255,255,255,.4);
+  background:transparent;color:#fff;font-size:.75rem;cursor:pointer;opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  padding-top:160px;
+  padding-bottom:80px;
+  text-align:center;
+  background:linear-gradient(to bottom,#111,#0b0b0d)
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  letter-spacing:2px;
+  margin-bottom:1rem
+}
+.hero p{opacity:.6}
+
+/* ===== Layout ===== */
+.container{max-width:900px;margin:auto;padding:0 2rem 100px}
+h2{font-family:'Playfair Display',serif;font-size:1.4rem;margin:4rem 0 1.5rem;opacity:.9}
+.bio{font-size:1.05rem;opacity:.9}
+.year-group{margin-bottom:2rem}
+.year{font-weight:700;opacity:.5;margin-bottom:.8rem}
+.item{margin-bottom:.6rem;opacity:.9}
+.more{margin-top:1rem}
+.more summary{
+  cursor:pointer;
+  font-size:.9rem;
+  letter-spacing:.5px;
+  opacity:.6;
+  margin-bottom:1.2rem
+}
+.more[open] summary{opacity:.85}
+.more .item{opacity:.9}
+
+/* ===== Awards ===== */
+.awards-list{margin-bottom:2rem}
+.award{margin-bottom:.6rem;opacity:.9}
+
+/* ===== Logo Wall ===== */
+.logo-wall{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:2rem;
+  align-items:center;
+  margin-top:2rem;
+  opacity:.85
+}
+.logo-wall img{
+  height:54px;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+  filter:grayscale(100%);
+  opacity:.7;
+  transition:.3s
+}
+.logo-wall img:hover{
+  filter:grayscale(0%);
+  opacity:1
+}
+
+/* ===== Footer ===== */
+footer{text-align:center;padding:4rem 2rem;font-size:.8rem;opacity:.35}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Unified Nav ===== -->
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 data-en="Curriculum Vitae" data-zh="履歷">Curriculum Vitae</h1>
+  <p data-en="Biography, exhibitions, awards" data-zh="個人介紹、展覽、獎項">Biography, exhibitions, awards</p>
+</section>
+
+<div class="container">
+
+<!-- ===== BIO ===== -->
+<div class="bio"
+data-en="Wu Siou Ming, based in Kaohsiung, Taiwan, is a sound artist and interdisciplinary creator whose practice spans sound, digital media, interactive systems, and installation. His work investigates how technological environments shape human perception, temporality, and collective experience, situating artistic practice within broader social and cultural infrastructures.
+
+Operating across both physical and online spaces, Wu develops participatory systems that transform everyday data, bodily gestures, and environmental signals into evolving audiovisual compositions. These processes critically examine how digital infrastructures influence attention, behavior, and modes of relation, while questioning systemic power structures and the cultural conditions of contemporary digital life.
+
+Wu’s works have been presented in museums and international festivals across Asia, Europe, and the Americas. He has received the Don Sante Prize for Contemporary Art – Social Art Award (Italy), the Arte Laguna Prize Special Award, and the Kaohsiung Award, and was selected for Taiwan’s Ministry of Culture “Made in Taiwan” program. His projects have been showcased at Ars Electronica, SIGGRAPH Asia, Science Gallery Monterrey, Rencontres Internationales Paris/Berlin, Museum of Science Boston, and the Athens Biennale.
+
+By integrating sound, generative systems, and interactive media, Wu creates poetic yet critical experiences that invite audiences to reconsider their relationship with technology, environment, and collective memory."
+data-zh="吳修銘現居台灣高雄，是一位聲音藝術家與跨領域創作者，創作涵蓋聲音、數位媒介、互動系統與裝置藝術。他的實踐聚焦於科技環境如何形塑人類的感知、時間經驗與集體關係，並以此為基礎展開批判性的藝術探索。
+
+在場域與感知經驗之間游移，他經常建構具參與性的系統，將日常資料、身體動態或環境訊號轉化為持續演化的視聽組合。透過這些過程，他檢視數位基礎建設如何影響注意力、行為與人際互動，並進一步質疑當代數位文化與系統性權力結構。
+
+吳修銘的作品曾於亞洲、歐洲、美洲的重要美術館與國際藝術節展出。他獲得多項肯定，包括義大利 Don Sante 當代藝術獎（社會藝術獎）、Arte Laguna Prize 特別獎、高雄獎，以及文化部「Made in Taiwan」新人推薦計畫。">
+Wu Siou Ming, based in Kaohsiung, Taiwan, is a sound artist and interdisciplinary creator whose practice spans sound, digital media, interactive systems, and installation. His work investigates how technological environments shape human perception, temporality, and collective experience, situating artistic practice within broader social and cultural infrastructures.
+
+Operating across both physical and online spaces, Wu develops participatory systems that transform everyday data, bodily gestures, and environmental signals into evolving audiovisual compositions. These processes critically examine how digital infrastructures influence attention, behavior, and modes of relation, while questioning systemic power structures and the cultural conditions of contemporary digital life.
+
+Wu’s works have been presented in museums and international festivals across Asia, Europe, and the Americas. He has received the Don Sante Prize for Contemporary Art – Social Art Award (Italy), the Arte Laguna Prize Special Award, and the Kaohsiung Award, and was selected for Taiwan’s Ministry of Culture “Made in Taiwan” program. His projects have been showcased at Ars Electronica, SIGGRAPH Asia, Science Gallery Monterrey, Rencontres Internationales Paris/Berlin, Museum of Science Boston, and the Athens Biennale.
+
+By integrating sound, generative systems, and interactive media, Wu creates poetic yet critical experiences that invite audiences to reconsider their relationship with technology, environment, and collective memory.
+</div>
+
+<!-- ===== Exhibitions ===== -->
+<h2 data-en="Selected Exhibitions" data-zh="展覽經歷">Selected Exhibitions</h2>
+
+<div class="year-group">
+<div class="year">2026</div>
+<div class="item">Longci Light Festival: Call of the Wild Woods, Huxingshan Park, Taiwan</div>
+<div class="item">Radical Futurism — WaveForms2026, Museum of Science Boston, US</div>
+<div class="item">Wheat City Nuit Blanche, Art Gallery of Southwestern Manitoba, Canada</div>
+<div class="item">Digital Trace: Part II, Sisters Room Arts Space, Georgia</div>
+</div>
+
+<div class="year-group">
+<div class="year">2025</div>
+<div class="item">CONSCIOUSNESS / CONSCIENCIA, Science Gallery Monterrey, Mexico</div>
+<div class="item">As Tranquil as Can Be, Serendipity Arts Festival, India</div>
+<div class="item">Along Lines and Traces — Biennale Larnaca, Pierides Museum, Larnaca, Cyprus</div>
+<div class="item">Sensory OFF/ON: Hyper-Sensory Video Experience Exhibition, Fuzhong 15 Art Space, Taiwan</div>
+<div class="item">Art Festival of Siangshan Wetland, Haishan Fishing Port, Taiwan</div>
+<div class="item">Sensory Reading — Artist’s Book Exhibition, Gallery.Unfold, Kyoto, Japan</div>
+<div class="item">Don Sante Prize for Contemporary Art Exhibition, Casamassima, Italy</div>
+<div class="item">"The Sound of Falling Feathers" — Solo Exhibition, NKUST Arts Center, Kaohsiung, Taiwan</div>
+<div class="item">Yuejin Lantern Festival, Tainan City, Taiwan</div>
+</div>
+
+<details class="more">
+<summary data-en="More exhibitions (2024–2012)" data-zh="更多展覽（2024–2012）">More exhibitions (2024–2012)</summary>
+
+<div class="year-group">
+<div class="year">2024</div>
+<div class="item">A Hundred Imaginations of Museum Architecture, Kaohsiung Museum of Fine Arts, Taiwan</div>
+<div class="item">When the Stars Shine — Contemporary Art and Cultural Creativity Series, Bright Galaxy Art Center, China</div>
+<div class="item">Echo — The Interdisciplinary Art of Shadow Play, Kaohsiung Museum of Shadow Puppet, Taiwan</div>
+<div class="item">The Realm of Words, Taipei Hakka Culture Foundation, Taipei, Taiwan</div>
+<div class="item">The Nature Art Cube Exhibition &lt;12x12x12+Nature&gt;, Gongju-si, Korea</div>
+<div class="item">Intercontinental Bienal, MARQ: Museum of Architecture and Design, Buenos Aires, Argentina</div>
+</div>
+
+<div class="year-group">
+<div class="year">2023</div>
+<div class="item">Listening Is the Thing with Feathers — Solo Exhibition, Kaohsiung Museum of Fine Arts, Taiwan</div>
+<div class="item">Rencontres Internationales Paris/Berlin, France &amp; Germany</div>
+<div class="item">FILE Electronic Language International Festival, Museu do Amanhã, Brazil</div>
+<div class="item">Kaohsiung Award Exhibition, Kaohsiung Museum of Fine Arts, Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2022</div>
+<div class="item">SIGGRAPH Asia, Daegu Exhibition &amp; Convention Center, Korea</div>
+<div class="item">Hotel YOLO, Pier-2 Art Center, Kaohsiung, Taiwan</div>
+<div class="item">THE WAY FORWARD — Taoyuan Art x Technology Festival, Taoyuan Arts Center, Taiwan</div>
+<div class="item">Yuejin Lantern Festival, Tainan City, Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2021</div>
+<div class="item">Athens Digital Arts Festival — TĀCTUS, Athens, Greece</div>
+<div class="item">Ars Electronica — Garden Formosa, Linz &amp; Online, Austria</div>
+<div class="item">Architectural Continuous Tense — Solo Exhibition, National Taiwan Museum of Fine Arts, Taichung, Taiwan</div>
+<div class="item">The Eternal Soundscape, Tainan Art Museum, Taiwan</div>
+<div class="item">Resonating Sounds, Treasure Hill Artist Village, Taipei, Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2020</div>
+<div class="item">ARTEFACT: CHERNOBIL 34&quot;, Science &amp; Technology Art Festival, Kiev, Ukraine</div>
+<div class="item">Tastes Record — Surrounding Spectrum of Traditional Market, Taipei, Taiwan</div>
+<div class="item">Symbiosis Relationship — Treasure Hill Light Festival, Taipei, Taiwan</div>
+<div class="item">National Art Exhibition ROC, Taichung, Taiwan</div>
+<div class="item">Italy-Greece Restart Project (Digital Video Art Festival / Bibart Biennale)</div>
+<div class="item">IN-SONORA 11, Madrid, Spain</div>
+</div>
+
+<div class="year-group">
+<div class="year">2019</div>
+<div class="item">Young Art Kaohsiung, Pier-2 Art Center, Taiwan</div>
+<div class="item">Street Fun, Museum of Contemporary Art Taipei, Taiwan</div>
+<div class="item">Popping City Art Project (Collaborative), Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2018</div>
+<div class="item">5th Land Art Mongolia Biennial, Ulaanbaatar, Mongolia</div>
+<div class="item">Singularity Now — Athens Digital Arts Festival, Greece</div>
+<div class="item">Taiwan Emerging Art Awards Exhibition, Taichung, Taiwan</div>
+<div class="item">Young Art Kaohsiung, Pier-2 Art Center, Taiwan</div>
+<div class="item">International Video Art Festival &quot;Now &amp; After&quot;, Moscow, Russia</div>
+<div class="item">MADATAC — Digital Art &amp; New Media Festival, Madrid, Spain</div>
+<div class="item">Res•o•nant, Jewish Museum Berlin, Germany</div>
+<div class="item">SoundMigration — The New Museum of Networked Art, Madrid, Spain</div>
+</div>
+
+<div class="year-group">
+<div class="year">2017</div>
+<div class="item">&quot;1, 2, 3 Blockhead&quot; — Solo Exhibition, Fans Record, Yilan, Taiwan</div>
+<div class="item">Objectified, CICA Museum, Korea</div>
+<div class="item">Young Art Kaohsiung, Pier-2 Art Center, Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2016</div>
+<div class="item">Sonorities Festival of Contemporary Music, Belfast, UK</div>
+<div class="item">&quot;Off The Wall&quot; Video Art Exhibition, Madison, Wisconsin, US</div>
+<div class="item">Xiluo Modern Art Festival, Yunlin, Taiwan</div>
+<div class="item">Poetic Sight, Elsa Art Gallery, Taipei, Taiwan</div>
+<div class="item">National Art Exhibition ROC, Taichung, Taiwan</div>
+<div class="item">NTNU Art &amp; Humanities Festival, Taipei, Taiwan</div>
+<div class="item">Athens Biennale / Transmission Art Festival, Athens &amp; Karlsruhe</div>
+<div class="item">North Coast Art Field, New Taipei City, Taiwan</div>
+<div class="item">Screen Test, Pier-2 Art Center, Kaohsiung, Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2015</div>
+<div class="item">Back to the Future, 116 Art Center, Kaohsiung, Taiwan</div>
+<div class="item">Da Dun Fine Arts Exhibition, Taichung, Taiwan</div>
+<div class="item">Dongju Spacetime Telephone, Matsu Island, Taiwan</div>
+<div class="item">Five Senses Meet Together, Pier-2 Art Center, Taiwan</div>
+<div class="item">Gaze: Visual Art Exhibition, Kaohsiung Museum of Fine Arts, Taiwan</div>
+<div class="item">Whiplash City, Kaohsiung, Taiwan</div>
+<div class="item">Daydream Tour, Taoyuan Arts Center, Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2014</div>
+<div class="item">Austronesian International Arts Award Exhibition, Taitung Art Museum, Taiwan</div>
+<div class="item">Sound Cultures in Post-War Taiwan, Kaohsiung Museum of Fine Arts, Taiwan</div>
+<div class="item">Memo-Scape, The Cube Project Space, Taipei, Taiwan</div>
+<div class="item">Do You Have Anything to Say…, Taipei, Taiwan</div>
+<div class="item">The Way of Living of Artists, National Kaohsiung Normal University, Taiwan</div>
+<div class="item">New Taipei City Art Village Group Exhibition, Taipei, Taiwan</div>
+<div class="item">TOGOART Museum Exhibition, Tainan, Taiwan</div>
+<div class="item">Futures of (Contemporary) Ecosystem…, Taipei, Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2013</div>
+<div class="item">Play Together, Taipei, Taiwan</div>
+<div class="item">New Folder Exhibition, National Kaohsiung Normal University, Taiwan</div>
+<div class="item">Beyond The Eye, Taipei, Taiwan</div>
+<div class="item">The Childhood / Soundscape, Taipei, Taiwan</div>
+<div class="item">Freedom Men Art Apartments Open Studio, Taichung, Taiwan</div>
+</div>
+
+<div class="year-group">
+<div class="year">2012</div>
+<div class="item">Gold Museum Open Studio Exhibition, New Taipei City, Taiwan</div>
+</div>
+
+</details>
+
+<!-- ===== Awards ===== -->
+<h2 data-en="Awards & Honors" data-zh="獎項與榮譽">Awards & Honors</h2>
+
+<div class="awards-list">
+<div class="award">2025 — Don Sante Prize for Contemporary Art — Social Art Award, Italy</div>
+<div class="award">2024 — Intercontinental Bienal Finalist (Sculpture)</div>
+<div class="award">2023 — Luxembourg Art Prize Shortlist</div>
+<div class="award">2023 — Arte Laguna Prize Special Award</div>
+<div class="award">2023 — Kaohsiung Award — Merit Award</div>
+<div class="award">2022 — Ministry of Culture, Taiwan — Made in Taiwan New Talent Program</div>
+<div class="award">2021 — Taoyuan Fine Arts Exhibition — New Media Art Shortlist</div>
+<div class="award">2020 — National Art Exhibition ROC — New Media Arts Bronze Prize</div>
+<div class="award">2020 / 2018 / 2016 — Ministry of Culture Fund for Visual Art International Exchange</div>
+<div class="award">2019 — Ministry of Culture Fund for Young Artist Support</div>
+<div class="award">2017 — Taipei Soundscape MRT Ambient Music Competition — Merit Award</div>
+<div class="award">2016 — OneBeat International Music Exchange Program — Selected Artist</div>
+</div>
+
+<!-- ===== Residencies ===== -->
+<h2 data-en="Artist Residencies" data-zh="駐村經歷">Artist Residencies</h2>
+
+<div class="awards-list">
+<div class="award">2016 — Atlantic Center for the Arts, Orlando, Florida, US</div>
+<div class="award">2016 — Xiluo Modern Art Festival Residency, Yunlin, Taiwan</div>
+<div class="award">2015 — Pier-2 Artist in Residence, Kaohsiung, Taiwan</div>
+<div class="award">2015 — Dapu Village Artist in Residence, Matsu Island, Taiwan</div>
+<div class="award">2014 — New Taipei International Artist Residency, Taipei, Taiwan</div>
+<div class="award">2013 — Freedom Men Art Apartments Residency, Taichung, Taiwan</div>
+<div class="award">2012 — Gold Museum Artist in Residence, New Taipei City, Taiwan</div>
+</div>
+
+<!-- ===== Logo Wall ===== -->
+<div class="logo-wall">
+<img src="images/award-logo-1.png" alt="Award logo 1">
+<img src="images/award-logo-2.png" alt="Award logo 2">
+<img src="images/award-logo-3.png" alt="Award logo 3">
+<img src="images/award-logo-4.png" alt="Award logo 4">
+<img src="images/award-logo-5.png" alt="Award logo 5">
+</div>
+
+</div>
+
+<footer>© 2026 Wu Siou Ming</footer>
+
+<script>
+let currentLang='en';
+function toggleLang(){
+const btn=document.querySelector('.lang-toggle');
+currentLang=currentLang==='en'?'zh':'en';
+btn.textContent=currentLang==='en'?'中文':'EN';
+document.querySelectorAll('[data-en]').forEach(el=>{
+el.textContent=el.getAttribute('data-'+currentLang);
+});
+document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>

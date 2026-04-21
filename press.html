@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press — Wu Siou Ming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lato',sans-serif;background:#0b0b0d;color:#eaeaea;line-height:1.9}
+a{color:inherit;text-decoration:none}
+
+/* ===== Unified Header ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;letter-spacing:1px
+}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{font-size:.85rem;opacity:.8;transition:.3s}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  background:transparent;border:1px solid rgba(255,255,255,.3);
+  color:#fff;padding:.35rem .9rem;border-radius:20px;
+  font-size:.75rem;cursor:pointer;opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  padding-top:160px;
+  padding-bottom:80px;
+  text-align:center;
+  background:linear-gradient(to bottom,#111,#0b0b0d)
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  letter-spacing:2px;
+  margin-bottom:1rem
+}
+.hero p{opacity:.6}
+
+/* ===== Layout ===== */
+.container{max-width:980px;margin:auto;padding:0 2rem 6rem}
+.section{margin-top:4rem}
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;
+  margin-bottom:1.6rem;
+  letter-spacing:1px
+}
+.muted{opacity:.6}
+
+/* ===== Lists ===== */
+.press-list{list-style:none}
+.press-item{
+  padding:1.2rem 0;
+  border-bottom:1px solid rgba(255,255,255,.08)
+}
+.press-title{font-size:1rem;opacity:.95}
+.press-meta{font-size:.85rem;opacity:.55}
+.press-summary{font-size:.95rem;opacity:.75;margin-top:.5rem}
+.press-note{font-size:.95rem;opacity:.7}
+
+/* ===== Footer ===== */
+footer{text-align:center;padding:4rem 2rem;font-size:.8rem;opacity:.35}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 data-en="Press & Media" data-zh="媒體與報導">Press & Media</h1>
+  <p data-en="Selected coverage, interviews, and essays" data-zh="精選報導、訪談與評論">
+    Selected coverage, interviews, and essays
+  </p>
+</section>
+
+<main class="container">
+  <section class="section">
+    <h2 data-en="Selected Coverage" data-zh="精選報導">Selected Coverage</h2>
+    <ul class="press-list">
+      <li class="press-item">
+        <div class="press-title" data-en="New Media Artist Wu Siou Ming Nominated for the 2023 Luxembourg Art Prize" data-zh="新媒體藝術家吳修銘入圍2023盧森堡藝術獎">
+          <a href="https://tbotaiwan.com/pride-of-taiwan-wu-siou-ming-luxembourg-art-prize-2023/" target="_blank" rel="noopener">
+            新媒體藝術家吳修銘入圍2023盧森堡藝術獎
+          </a>
+        </div>
+        <div class="press-meta" data-en="International Honor / Art News • Nov 2, 2023 • TBO Taiwan | 紀路臺灣" data-zh="國際榮譽／藝術新聞 • 2023年11月2日 • TBO Taiwan | 紀路臺灣">
+          國際榮譽／藝術新聞 • 2023年11月2日 • TBO Taiwan | 紀路臺灣
+        </div>
+        <div class="press-summary" data-en="Reports that Wu’s Cultivated Reality series was shortlisted for the 9th Luxembourg Art Prize, examining how programmed manipulation reshapes perception of reality." data-zh="報導吳修銘以《人造實境》（Cultivated Reality）系列入圍第九屆盧森堡藝術獎決選，反思人為操作對現實感知的影響。">
+          報導吳修銘以《人造實境》（Cultivated Reality）系列入圍第九屆盧森堡藝術獎決選，反思人為操作對現實感知的影響。
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="Kaohsiung Museum KSpace Opens: Wu Siou Ming Solo Exhibition \"Listening Like a Bird\"" data-zh="高美館KSpace新展登場！新媒體藝術家吳修銘個展《像鳥一樣聆聽》">
+          <a href="https://artemperor.tw/focus/5707" target="_blank" rel="noopener">
+            高美館KSpace新展登場！新媒體藝術家吳修銘個展《像鳥一樣聆聽》
+          </a>
+        </div>
+        <div class="press-meta" data-en="Solo Exhibition / New Media • Oct 28, 2023 • Kaohsiung Museum of Fine Arts / Art Emperor / Newtalk" data-zh="個展訊息／新媒體藝術 • 2023年10月28日 • 高雄市立美術館／非池中藝術網／Newtalk">
+          個展訊息／新媒體藝術 • 2023年10月28日 • 高雄市立美術館／非池中藝術網／Newtalk
+        </div>
+        <div class="press-summary" data-en="The exhibition transforms aerial imagery of Kaohsiung into sound, inviting visitors to listen to urban emotions from a bird-like perspective." data-zh="採集高雄空拍影像並以演算法轉化為音樂，邀觀者以鳥類視角聆聽城市情感與地景變遷。">
+          採集高雄空拍影像並以演算法轉化為音樂，邀觀者以鳥類視角聆聽城市情感與地景變遷。
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="2023 Kaohsiung Award: Project-based & Interdisciplinary Excellence" data-zh="2023高雄獎：計畫型暨跨領域藝術優選">
+          <a href="https://artemperor.tw/focus/5237" target="_blank" rel="noopener">
+            2023高雄獎：計畫型暨跨領域藝術優選
+          </a>
+        </div>
+        <div class="press-meta" data-en="Awards Announcement • Mar 25, 2023 • Art Emperor" data-zh="獎項公告 • 2023年3月25日 • 非池中藝術網">
+          獎項公告 • 2023年3月25日 • 非池中藝術網
+        </div>
+        <div class="press-summary" data-en="Announces the 2023 Kaohsiung Award recipients, recognizing Wu Siou Ming for experimental interdisciplinary practice." data-zh="公佈2023高雄獎得獎名單，吳修銘以計畫型暨跨領域創作獲優選獎肯定。">
+          公佈2023高雄獎得獎名單，吳修銘以計畫型暨跨領域創作獲優選獎肯定。
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="Venice \"Arte Laguna Prize\" — Taiwanese Artists Shine" data-zh="威尼斯「拉古納藝術獎」 台藝術家大放異彩">
+          <a href="https://www.cna.com.tw/news/acul/202303120152.aspx" target="_blank" rel="noopener">
+            威尼斯「拉古納藝術獎」 台藝術家大放異彩
+          </a>
+        </div>
+        <div class="press-meta" data-en="International Awards News • Mar 12, 2023 • Central News Agency (CNA)" data-zh="國際獎項新聞 • 2023年3月12日 • 中央社">
+          國際獎項新聞 • 2023年3月12日 • 中央社
+        </div>
+        <div class="press-summary" data-en="Reports on the 17th Arte Laguna Prize in Venice, noting Taiwanese artists shortlisted and Wu Siou Ming receiving a special award for River Concert." data-zh="報導第17屆拉古納藝術獎在威尼斯頒獎，提及台灣多位藝術家入圍，吳修銘以《河流演奏會》獲特別獎。">
+          報導第17屆拉古納藝術獎在威尼斯頒獎，提及台灣多位藝術家入圍，吳修銘以《河流演奏會》獲特別獎。
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="Wu Siou Ming | Arte Laguna Prize" data-zh="Wu Siou Ming | Arte Laguna Prize">
+          <a href="https://artelagunaprize.com/17-edition-22-23/winners-22-23/wu-siou-ming-opera-arte-laguna-prize/" target="_blank" rel="noopener">
+            Wu Siou Ming | Arte Laguna Prize
+          </a>
+        </div>
+        <div class="press-meta" data-en="International Award • 2023 • Arte Laguna Prize" data-zh="國際獎項 • 2023 • Arte Laguna Prize">
+          國際獎項 • 2023 • Arte Laguna Prize
+        </div>
+        <div class="press-summary" data-en="Announces the 17th Arte Laguna Prize winners, awarding Wu Siou Ming a Venice cultural special award for River Concert." data-zh="Announces the 17th Arte Laguna Prize winners, awarding Wu Siou Ming a Venice cultural special award for River Concert.">
+          Announces the 17th Arte Laguna Prize winners, awarding Wu Siou Ming a Venice cultural special award for River Concert.
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="《2023高雄獎》｜優選獎訪談｜曾怡馨、盧卡斯、梁德宇、毛友文、吳修銘" data-zh="《2023高雄獎》｜優選獎訪談｜曾怡馨、盧卡斯、梁德宇、毛友文、吳修銘">
+          <a href="https://youtu.be/7TJsAq4Yimo?si=P3drTTtqpjiATCWK" target="_blank" rel="noopener">
+            《2023高雄獎》｜優選獎訪談｜曾怡馨、盧卡斯、梁德宇、毛友文、吳修銘
+          </a>
+        </div>
+        <div class="press-meta" data-en="Interview • 2023" data-zh="訪談 • 2023">訪談 • 2023</div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="Taiwanese artist Wu Hsiu-ming engages in dialogue with nature through technology; participates in SIGGRAPH ASIA" data-zh="台灣藝術家吳修銘透過科技與自然對話　大邱參展SIGGRAPH ASIA國際科技藝術展會">
+          <a href="https://www.limedia.tw/art/34831/" target="_blank" rel="noopener">
+            台灣藝術家吳修銘透過科技與自然對話　大邱參展SIGGRAPH ASIA國際科技藝術展會
+          </a>
+        </div>
+        <div class="press-meta" data-en="International Exhibition / Academic Publication • Dec 2022 • SIGGRAPH Asia / ACM" data-zh="國際展覽／學術出版 • 2022年12月 • SIGGRAPH Asia／ACM">
+          國際獎項新聞 • 2022年12月19日 • 立報傳媒
+        </div>
+        <div class="press-summary" data-en="River Concert was presented at the SIGGRAPH Asia Art Gallery in Daegu, highlighting Wu’s interdisciplinary digital art practice." data-zh="River Concert was presented at the SIGGRAPH Asia Art Gallery in Daegu, highlighting Wu’s interdisciplinary digital art practice.">
+          藝術家吳修銘的作品〈河流演奏會〉日前參加SIGGRAPH Asia 2022 的美術館項目中展出
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="River Concert in SA '22: SIGGRAPH Asia 2022 Art Gallery" data-zh="River Concert in SA '22: SIGGRAPH Asia 2022 Art Gallery">
+          <a href="http://dx.doi.org/10.1145/3550470.3558433" target="_blank" rel="noopener">
+            River Concert in SA '22: SIGGRAPH Asia 2022 Art Gallery
+          </a>
+        </div>
+        <div class="press-meta" data-en="International Exhibition / Academic Publication • Dec 2022 • SIGGRAPH Asia / ACM" data-zh="國際展覽／學術出版 • 2022年12月 • SIGGRAPH Asia／ACM">
+          國際展覽／學術出版 • 2022年12月 • SIGGRAPH Asia／ACM
+        </div>
+        <div class="press-summary" data-en="River Concert was presented at the SIGGRAPH Asia Art Gallery in Daegu, highlighting Wu’s interdisciplinary digital art practice." data-zh="River Concert was presented at the SIGGRAPH Asia Art Gallery in Daegu, highlighting Wu’s interdisciplinary digital art practice.">
+          River Concert was presented at the SIGGRAPH Asia Art Gallery in Daegu, highlighting Wu’s interdisciplinary digital art practice.
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="2022 Taipei Art Fair MIT Emerging Artists Shortlist" data-zh="2022台北藝博MIT新人推薦特區獲選名單公布">
+          <a href="https://art.ltn.com.tw/article/breakingnews/4038175" target="_blank" rel="noopener">
+            2022台北藝博MIT新人推薦特區獲選名單公布
+          </a>
+        </div>
+        <div class="press-meta" data-en="Exhibition News / Awards • Aug 26, 2022 • The Liberty Times" data-zh="展覽新聞／獎項公告 • 2022年8月26日 • 自由時報">
+          展覽新聞／獎項公告 • 2022年8月26日 • 自由時報
+        </div>
+        <div class="press-summary" data-en="The Ministry of Culture announced the 15th MIT Emerging Artists roster, selecting Wu Siou Ming among eight artists with gallery representation support." data-zh="文化部公佈第15屆「MIT新人推薦特區」名單，吳修銘為8位獲選藝術家之一，並由333畫廊媒合協助。">
+          文化部公佈第15屆「MIT新人推薦特區」名單，吳修銘為8位獲選藝術家之一，並由333畫廊媒合協助。
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="藝術家進駐工研院實驗計畫〖在此相遇 Flowing Crowd with Musical Notes • 吳修銘〗" data-zh="藝術家進駐工研院實驗計畫〖在此相遇 Flowing Crowd with Musical Notes • 吳修銘〗">
+          <a href="https://youtu.be/H9IK4xCC_lE?si=BKRwcx1L_WIvdfJ7" target="_blank" rel="noopener">
+            藝術家進駐工研院實驗計畫〖在此相遇 Flowing Crowd with Musical Notes • 吳修銘〗
+          </a>
+        </div>
+        <div class="press-meta" data-en="Interview • 2022 • ITRI & Taoyuan Metro" data-zh="訪談 • 2022 • 工業技術研究院／桃園捷運局">
+          訪談 • 2022 • 工業技術研究院／桃園捷運局
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title">
+          <a href="https://fb.watch/huqJ7DTMqn/" target="_blank" rel="noopener">
+            《永聲花 - 無盡的聲音風景》，藝術家訪談
+          </a>
+        </div>
+        <div class="press-meta" data-en="Interview • 2021 • Tainan Art Museum" data-zh="訪談 • 2021 • 台南市立美術館">
+          訪談 • 2021 • 台南市立美術館
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title">
+          <a href="https://fb.watch/hoI4o8_Xcr/" target="_blank" rel="noopener">
+            《埋藏的入口 - 鹽水景觀色譜計劃 : 吳修銘 個展》展覽訪談
+          </a>
+        </div>
+        <div class="press-meta" data-en="Interview • 2021 • YueJin Art Museum" data-zh="訪談 • 2021 • 月之美術館 YueJin Art Museum">
+          訪談 • 2021 • 月之美術館 YueJin Art Museum
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="Resting in Abstraction: Wu Siou Ming’s \"Baiwei Record Shop\"" data-zh="休憩在抽象：吳修銘的百味唱片行">
+          <a href="https://artemperor.tw/focus/3615" target="_blank" rel="noopener">
+            休憩在抽象：吳修銘的百味唱片行
+          </a>
+        </div>
+        <div class="press-meta" data-en="Art Review / Feature • Nov 10, 2020 • Art Emperor" data-zh="藝文焦點／深度評論 • 2020年11月10日 • 非池中藝術網">
+          藝文焦點／深度評論 • 2020年11月10日 • 非池中藝術網
+        </div>
+        <div class="press-summary" data-en="A critical reading of Wu’s Xinfutown exhibition, connecting color psychology with music and oral histories from market workers." data-zh="深入評論新富町展覽，解析色彩心理學如何映射音樂，並結合市場職人口述歷史的感性敘事。">
+          深入評論新富町展覽，解析色彩心理學如何映射音樂，並結合市場職人口述歷史的感性敘事。
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="Transforming Images into Sound: Letting the Public Hear Traditional Market Memories" data-zh="將影像轉譯樂音 吳修銘讓大眾聽見傳統市場記憶">
+          <a href="https://ocacnews.net/article/264622" target="_blank" rel="noopener">
+            將影像轉譯樂音 吳修銘讓大眾聽見傳統市場記憶
+          </a>
+        </div>
+        <div class="press-meta" data-en="Feature / Art Project • Oct 7, 2020 • Central News Agency / OCAC eNews" data-zh="專題人物／藝術計畫 • 2020年10月7日 • 中央社／僑務電子報">
+          專題人物／藝術計畫 • 2020年10月7日 • 中央社／僑務電子報
+        </div>
+        <div class="press-summary" data-en="The report introduces Wu’s New Futian Cultural Market project, turning color data from the Wanhua market into AI-generated music to revive collective memory." data-zh="介紹吳修銘獲選新富町文化市場徵件計畫，將市場地景色彩參數轉化為AI生成音樂，喚醒大眾對傳統市場的記憶。">
+          介紹吳修銘獲選新富町文化市場徵件計畫，將市場地景色彩參數轉化為AI生成音樂，喚醒大眾對傳統市場的記憶。
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="2020 National Art Award Bronze: \"Landscape Chromatics\" Series" data-zh="2020全國美術獎銅牌：景觀色譜－樂群村、華陰街、西螺鎮">
+          <a href="https://today.line.me/tw/v3/article/PDxqN8" target="_blank" rel="noopener">
+            2020全國美術獎銅牌：景觀色譜－樂群村、華陰街、西螺鎮
+          </a>
+        </div>
+        <div class="press-meta" data-en="Award Report • Aug 11, 2020 • ARTouch / LINE TODAY" data-zh="獲獎報導 • 2020年8月11日 • 典藏 ARTouch／LINE TODAY">
+          獲獎報導 • 2020年8月11日 • 典藏 ARTouch／LINE TODAY
+        </div>
+        <div class="press-summary" data-en="Reports the bronze award in New Media Art for the \"Landscape Chromatics\" series, using AI composition and image analysis to reframe local landscapes." data-zh="報導吳修銘以《景觀色譜》系列獲新媒體藝術類銅牌獎，透過AI編曲與影像分析重構地方想像。">
+          報導吳修銘以《景觀色譜》系列獲新媒體藝術類銅牌獎，透過AI編曲與影像分析重構地方想像。
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="〖2019漾藝博 / 藝術特展區〗藏海-典藏人生最美好的途徑" data-zh="〖2019漾藝博 / 藝術特展區〗藏海-典藏人生最美好的途徑">
+          <a href="https://youtu.be/LSJ5keXsubI?si=MlsAe99yFYJyl12K" target="_blank" rel="noopener">
+            〖2019漾藝博 / 藝術特展區〗藏海-典藏人生最美好的途徑
+          </a>
+        </div>
+        <div class="press-meta" data-en="Coverage • 2019 • Pier-2 Art Center" data-zh="報導 • 2019 • 駁二藝術特區">
+          報導 • 2019 • 駁二藝術特區
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="Exploring Soundscapes with OneBeat Fellow Wu Siou Ming" data-zh="Exploring Soundscapes with OneBeat Fellow Wu Siou Ming">
+          <a href="https://1beat.org/exploring-soundscapes-with-onebeat-fellow-wu-siou-ming/" target="_blank" rel="noopener">
+            Exploring Soundscapes with OneBeat Fellow Wu Siou Ming
+          </a>
+        </div>
+        <div class="press-meta" data-en="Artist Interview • 2016 • OneBeat" data-zh="藝術家專訪 • 2016 • OneBeat">
+          藝術家專訪 • 2016 • OneBeat
+        </div>
+        <div class="press-summary" data-en="An interview on the OneBeat exchange program, discussing sound, image, and installation work addressing urban social issues and the Sea Inside project." data-zh="An interview on the OneBeat exchange program, discussing sound, image, and installation work addressing urban social issues and the Sea Inside project.">
+          An interview on the OneBeat exchange program, discussing sound, image, and installation work addressing urban social issues and the Sea Inside project.
+        </div>
+      </li>
+
+      <li class="press-item">
+        <div class="press-title" data-en="《2014 南島國際美術獎》入選作品訪談" data-zh="《2014 南島國際美術獎》入選作品訪談">
+          《2014 南島國際美術獎》入選作品訪談
+        </div>
+        <div class="press-meta" data-en="Interview • 2014 • Taitung Art Museum" data-zh="訪談 • 2014 • 台東美術館">
+          訪談 • 2014 • 台東美術館
+        </div>
+      </li>
+    </ul>
+  </section>
+
+
+  <section class="section">
+    <h2 data-en="Press Kit" data-zh="媒體資料">Press Kit</h2>
+    <p class="press-note" data-en="Press materials available upon request." data-zh="媒體資料可來信索取。">
+      Press materials available upon request.
+    </p>
+    <p class="muted">Email: yourname@email.com</p>
+  </section>
+</main>
+
+<footer>© 2026 Wu Siou Ming</footer>
+
+<script>
+let currentLang='en';
+function toggleLang(){
+  const btn=document.querySelector('.lang-toggle');
+  currentLang=currentLang==='en'?'zh':'en';
+  btn.textContent=currentLang==='en'?'中文':'EN';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+currentLang);
+  });
+  document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>

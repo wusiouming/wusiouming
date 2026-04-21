@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River Concert — Wu Siou Ming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Lato',sans-serif;color:#fff;background:#0b0b0d;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+/* ===== Unified Header ===== */
+header{
+  position:fixed;top:0;width:100%;z-index:1000;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-left{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  letter-spacing:1px
+}
+.nav-right{display:flex;align-items:center;gap:1.8rem}
+.nav-right a{
+  font-size:.85rem;
+  opacity:.8;
+  transition:.3s
+}
+.nav-right a:hover{opacity:1}
+.lang-toggle{
+  padding:.35rem .9rem;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.4);
+  font-size:.75rem;
+  cursor:pointer;
+  background:transparent;
+  color:#fff;
+  opacity:.85
+}
+.lang-toggle:hover{opacity:1}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:#000;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('../images/work-river-concert.jpg') center/cover no-repeat;
+  filter:brightness(.6);
+  transform:scale(1.05);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,.2),rgba(0,0,0,.85));
+}
+.hero-content{position:relative;z-index:2;padding:0 2rem}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.1rem;
+  letter-spacing:1.5px;
+  margin-bottom:1.4rem
+}
+.hero p{opacity:.7;letter-spacing:.5px}
+
+/* ===== Sections ===== */
+.section{max-width:980px;margin:auto;padding:6rem 2rem}
+.section-wide{max-width:1200px;margin:auto;padding:6rem 2rem}
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.1rem;
+  margin-bottom:2.2rem;
+  letter-spacing:1.2px
+}
+.section h2::before{
+  content:"";
+  display:block;
+  width:120px;
+  height:1px;
+  background:rgba(255,255,255,.12);
+  margin-bottom:1.2rem
+}
+
+/* ===== Gallery ===== */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.6rem
+}
+.gallery img{
+  width:calc(33% - 1rem);
+  border-radius:14px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:.6s;
+}
+.gallery img:hover{transform:scale(1.03)}
+@media(max-width:900px){.gallery img{width:calc(50% - 1rem)}}
+@media(max-width:600px){.gallery img{width:100%}}
+
+/* ===== Video ===== */
+.video-section{display:block}
+.video-container{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:14px;
+  overflow:hidden;
+}
+.video-container iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border:none;
+}
+
+
+.video-link a{
+  display:inline-block;
+  font-size:.9rem;
+  letter-spacing:.5px;
+  opacity:.7;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  padding-bottom:.2rem;
+  transition:.3s
+}
+.video-link a:hover{opacity:1}
+
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:4vw
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:92vw;
+  max-height:88vh;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.5)
+}
+.lightbox-close{
+  position:fixed;
+  top:24px;right:28px;
+  font-size:1.6rem;
+  letter-spacing:2px;
+  opacity:.7;
+  cursor:pointer;
+  user-select:none
+}
+.lightbox-close:hover{opacity:1}
+
+/* ===== Concept ===== */
+.concept p{margin-bottom:1.8rem;opacity:.88}
+
+/* ===== Artwork Info ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:1.2rem 2.4rem;
+  opacity:.88;
+}
+.info-label{opacity:.5}
+
+/* ===== Exhibitions ===== */
+.exhibitions ul{list-style:none}
+.exhibitions li{margin-bottom:.8rem;opacity:.85}
+
+footer{
+  text-align:center;
+  padding:4rem 2rem;
+  font-size:.8rem;
+  opacity:.4
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:2.3rem}
+  .section h2{font-size:1.85rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Unified Nav ===== -->
+<header>
+  <nav class="nav">
+    <div class="nav-left">Wu Siou Ming</div>
+    <div class="nav-right">
+      <a href="../index.html" data-en="Home" data-zh="首頁">Home</a>
+      <a href="../works.html" data-en="Works" data-zh="作品">Works</a>
+      <a href="../cv.html" data-en="CV" data-zh="經歷">CV</a>
+      <a href="../press.html" data-en="Press" data-zh="報導">Press</a>
+      <a href="../index.html#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">中文</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 data-en="River Concert" data-zh="河流協奏">River Concert</h1>
+    <p data-en="Art Project • 2022"
+       data-zh="藝術計畫 • 2022">
+       Art Project • 2022
+    </p>
+  </div>
+</section>
+
+<!-- ===== 2. PHOTOS ===== -->
+<section class="section-wide">
+  <div class="gallery">
+    <img src="../images/work-river-concert-1.jpg" alt="Exhibition view 1">
+    <img src="../images/work-river-concert-2.jpg" alt="Exhibition view 2">
+    <img src="../images/work-river-concert-3.jpg" alt="Exhibition view 3">
+    <img src="../images/work-river-concert-4.jpg" alt="Exhibition view 4">
+    <img src="../images/work-river-concert-5.jpg" alt="Exhibition view 5">
+    <img src="../images/work-river-concert-6.jpg" alt="Exhibition view 6">
+
+  </div>
+</section>
+
+<!-- ===== 3. VIDEO (optional / link-only) ===== -->
+<section class="section video-section" id="videoSection">
+  <h2 data-en="Video Documentation" data-zh="影片紀錄">Video Documentation</h2>
+  <p class="video-link">
+    <a href="" target="_blank" rel="noopener">
+      Watch video documentation →
+    </a>
+  </p>
+</section>
+
+<!-- ===== 4. CONCEPT ===== -->
+<section class="section concept">
+  <h2 data-en="Concept" data-zh="概念論述">Concept</h2>
+
+  <p data-en="I started this project with a local group based on the intention of being close to the river. I started sound recording on the banks of rivers in 2020, using hydrophones to go deep into the water to record underwater sounds. We recorded and collected sound samples in different river basins, including upstream and downstream, and found that the sounds of different basins have their own characteristics, reflecting the geographical and spatial patterns of the river banks and the ecology of the surrounding environment."
+     data-zh="河流一直支持著人類的發展，然而我們有沒有仔細聽過她的聲音？基於親近河流的初衷，我與鹽水當地團體開始這項計畫。我們在河岸邊進行聲音採集，使用水下麥克風錄製河流裡的聲音。發現不同流域的聲音各有特色，反應了河岸的地理空間型態與周遭環境的生態。我們將採集到的聲音樣本輸入程式當中，透過語音情緒辨識技術進行音訊分析，捕捉河流的「情緒」，並取得人聲頻譜的範圍的聲音再以口語輸入語音辨識系統，透過這種方式我們從河流的聲音當中捕捉到許多「訊息」，讓我們彷彿可以得知河流所要述說的隻字片語。並將河流的情緒資料運算並編程音訊結構，將水聲轉化成音樂讓河流自己演奏，而我們得以聆聽河流的言語與感性。">
+     I started this project with a local group based on the intention of being close to the river. I started sound recording on the banks of rivers in 2020, using hydrophones to go deep into the water to record underwater sounds. We recorded and collected sound samples in different river basins, including upstream and downstream, and found that the sounds of different basins have their own characteristics, reflecting the geographical and spatial patterns of the river banks and the ecology of the surrounding environment.
+  </p>
+
+  <p data-en="We develop a set of audio technology, the system refers to the characteristics of emotion recognition and the theory of harmony, and use the data of audio analysis to perform operations, and compile the content of the database into an artificial intelligence music system, output a non-fixed music structure automatically composed instant. So we can hear the underwater sound into a dynamic piece of music and let the river play the music itself. Through the technology of Frequency-modulation we obtain audio content close to the spectrum of the human voice, and input the sound into the speech recognition system. In this way, the system recognizes many unexpected words and sentences, so that we seem to have a chance to know what the river is about to say. These \"messages\" are a kind of mythology of human beings since ancient times, a world where all things and human beings can coexist harmoniously, so that we have more imagination space for the relationship between nature and human beings."
+     data-zh="我們發展出一套聲音技術系統，結合情緒辨識特徵與和聲理論，運用音訊分析資料進行運算，並將資料庫內容編譯成一套 AI 音樂系統，即時輸出非固定結構的音樂。如此一來，水下聲音被轉化為動態的樂曲，讓河流能「演奏」自己的聲音。透過調頻技術，我們取得接近人聲頻譜的聲響，再將其輸入語音辨識系統，使系統辨識出許多出乎意料的詞句，彷彿讓我們有機會聽見河流想要訴說的隻字片語。這些「訊息」是人類自古以來的神話想像——萬物與人類能夠和諧共存的世界，因而為自然與人之間的關係開啟更多想像空間。">
+     We develop a set of audio technology, the system refers to the characteristics of emotion recognition and the theory of harmony, and use the data of audio analysis to perform operations, and compile the content of the database into an artificial intelligence music system, output a non-fixed music structure automatically composed instant. So we can hear the underwater sound into a dynamic piece of music and let the river play the music itself. Through the technology of Frequency-modulation we obtain audio content close to the spectrum of the human voice, and input the sound into the speech recognition system. In this way, the system recognizes many unexpected words and sentences, so that we seem to have a chance to know what the river is about to say. These "messages" are a kind of mythology of human beings since ancient times, a world where all things and human beings can coexist harmoniously, so that we have more imagination space for the relationship between nature and human beings.
+  </p>
+</section>
+
+<!-- ===== 5. ARTWORK INFO ===== -->
+<section class="section">
+  <h2 data-en="Artwork Information" data-zh="作品資訊">Artwork Information</h2>
+  <div class="info-grid">
+    <div class="info-label">Year</div><div>2022</div>
+    <div class="info-label">Medium</div><div>video, sound, manual, document, stone</div>
+    <div class="info-label">Size</div><div>600 x 600 x 150 cm</div>
+    <div class="info-label">Artist</div><div>Wu Siou Ming</div>
+  </div>
+</section>
+
+<!-- ===== 6. EXHIBITIONS ===== -->
+<section class="section exhibitions">
+  <h2 data-en="Exhibitions" data-zh="展出履歷">Exhibitions</h2>
+  <ul>
+    <li>2023 — Kaohsiung Award Exhibition, Kaohsiung Museum of Fine Arts, Taiwan</li>
+    <li>2022 — Yuejin Lantern Festival, Tainan City, Taiwan</li>
+    <li>2022 — SIGGRAPH Asia, Daegu Exhibition &amp; Convention Center, Korea</li>
+    <li>2023 — Arte Laguna Prize Special Award</li>
+  </ul>
+</section>
+
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-close" id="lightboxClose">×</div>
+  <img id="lightboxImg" alt="Expanded view">
+</div>
+
+<footer>
+© 2026 Wu Siou Ming — All Rights Reserved
+</footer>
+
+<script>
+/* ===== Auto Hide Video Section ===== */
+const videoSection = document.getElementById('videoSection');
+const videoLink = document.querySelector('.video-link a');
+if (!videoLink || !videoLink.getAttribute('href')) {
+  videoSection.style.display = "none";
+}
+
+
+/* ===== Lightbox ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src){
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+}
+function closeLightbox(){
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  if (lightboxImg) lightboxImg.src = '';
+}
+
+document.querySelectorAll('.gallery img').forEach(img=>{
+  img.addEventListener('click',()=>openLightbox(img.src));
+});
+if (lightbox){
+  lightbox.addEventListener('click',(e)=>{
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+if (lightboxClose){
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+document.addEventListener('keydown',(e)=>{
+  if (e.key === 'Escape') closeLightbox();
+});
+
+/* ===== Language Toggle ===== */
+let currentLang='en';
+function toggleLang(){
+  const btn=document.querySelector('.lang-toggle');
+  currentLang=currentLang==='en'?'zh':'en';
+  btn.textContent=currentLang==='en'?'中文':'EN';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+currentLang);
+  });
+  document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
+}
+</script>
+
+</body>
+</html>
