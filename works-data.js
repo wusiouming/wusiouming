@@ -517,7 +517,7 @@ const works = [
     url: "works/the-flood-submerged-this-city.html",
     featured: false,
     curatorialSection: "system",
-    curatorialOrder: 36,
+    curatorialOrder: 4,
     tags: "Web Interface • Big Data • Generative Flood",
   },
 
@@ -543,7 +543,7 @@ const works = [
     url: "works/infinity-evolving-world.html",
     featured: false,
     curatorialSection: "system",
-    curatorialOrder: 38,
+    curatorialOrder: 5,
     tags: "AI • Urban Anxiety • Ecological Precarity",
   },
 
