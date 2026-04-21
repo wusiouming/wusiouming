@@ -399,7 +399,7 @@ const works = [
     url: "works/screen-test.html",
     featured: false,
     curatorialSection: "sonic",
-    curatorialOrder: 33,
+    curatorialOrder: 7,
     tags: "",
   },
 
