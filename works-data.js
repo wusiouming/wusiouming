@@ -392,7 +392,7 @@ const works = [
 
   {
     title: "Screen Test",
-    year: "2016",
+    year: "2025",
     category: "Social Media Art Project",
     categoryKey: "digital",
     image: "images/work-screen-test.jpg",
