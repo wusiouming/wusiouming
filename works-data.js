@@ -288,14 +288,14 @@ const works = [
 
   {
     title: "Rainbow Stage",
-    year: "2020",
+    year: "2025",
     category: "Interactive Audiovisual Installation",
     categoryKey: "installation",
     image: "images/work-rainbow-stage.jpg",
     url: "works/rainbow-stage.html",
     featured: true,
     curatorialSection: "system",
-    curatorialOrder: 4,
+    curatorialOrder: 6,
     tags: "",
   },
 
