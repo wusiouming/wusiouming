@@ -291,7 +291,7 @@ const works = [
     year: "2020",
     category: "Interactive Audiovisual Installation",
     categoryKey: "installation",
-    image: "images/work-say-a-rainbow.jpg",
+    image: "images/work-rainbow-stage.jpg",
     url: "works/rainbow-stage.html",
     featured: true,
     curatorialSection: "system",
