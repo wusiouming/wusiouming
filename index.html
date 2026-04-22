@@ -65,6 +65,13 @@ header{
   justify-content:center;
   align-items:baseline
 }
+.hero h1.is-zh{
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  font-size:3.2rem;
+  letter-spacing:1.6px;
+  line-height:1.05;
+}
 .hero p{font-size:1.25rem;font-weight:300;letter-spacing:1px;opacity:.7;margin-bottom:3rem}
 .btn{display:inline-block;padding:.9rem 1.8rem;border-radius:30px;font-size:.9rem;letter-spacing:1px;transition:.3s}
 .btn-primary{background:#fff;color:#111}
@@ -186,6 +193,7 @@ footer{text-align:center;padding:4rem 2rem;font-size:.8rem;opacity:.4}
 /* ===== Responsive ===== */
 @media(max-width:900px){
   .hero h1{font-size:2.4rem}
+  .hero h1.is-zh{font-size:2.2rem}
   .hero p{font-size:1rem}
   .work-card{min-width:78vw;height:60vw}
 }
@@ -195,15 +203,16 @@ footer{text-align:center;padding:4rem 2rem;font-size:.8rem;opacity:.4}
 .hero-char{
   display:inline-block;
   opacity:0;
-  filter:blur(10px);
-  transform:translateY(8px) scale(1.08);
-  animation:brandCoalesce .95s cubic-bezier(.2,.8,.2,1) forwards;
+  filter:blur(8px);
+  transform:translateY(4px) scale(.88);
+  text-shadow:0 0 8px rgba(255,255,255,.26), 0 0 18px rgba(255,255,255,.1);
+  animation:brandCoalesce 2.8s cubic-bezier(.18,.82,.22,1) forwards;
 }
 .brand-space,
 .hero-space{display:inline-block;width:.28em}
 @keyframes brandCoalesce{
-  0%{opacity:0;filter:blur(10px);transform:translateY(8px) scale(1.08)}
-  60%{opacity:.75;filter:blur(2px);transform:translateY(1px) scale(1.01)}
+  0%{opacity:0;filter:blur(8px);transform:translateY(4px) scale(.88);text-shadow:0 0 26px rgba(255,255,255,.3), 0 0 44px rgba(255,255,255,.08)}
+  45%{opacity:.52;filter:blur(3px);transform:translateY(1px) scale(.97);text-shadow:0 0 14px rgba(255,255,255,.2), 0 0 24px rgba(255,255,255,.06)}
   100%{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}
 }
 </style>
@@ -333,6 +342,23 @@ if(typeof works!=="undefined") renderWorks("environment");
 <!-- ===== Language Toggle ===== -->
 <script>
 let currentLang='en';
+const heroTitle = document.querySelector('.hero h1');
+
+function renderHeroTitle(lang){
+  if (!heroTitle) return;
+  const text = heroTitle.getAttribute(lang === 'en' ? 'data-en' : 'data-zh') || heroTitle.textContent;
+  heroTitle.classList.toggle('is-zh', lang === 'zh');
+  heroTitle.textContent = '';
+  [...text].forEach((ch, i) => {
+    const span = document.createElement('span');
+    span.className = ch === ' ' ? 'hero-space' : 'hero-char';
+    span.style.animationDelay = `${0.11 * i}s`;
+    span.textContent = ch === ' ' ? '\u00A0' : ch;
+    heroTitle.appendChild(span);
+  });
+  heroTitle.dataset.split = '1';
+}
+
 function toggleLang(){
   const btn=document.querySelector('.lang-toggle');
   currentLang=currentLang==='en'?'zh':'en';
@@ -340,21 +366,14 @@ function toggleLang(){
   document.querySelectorAll('[data-en]').forEach(el=>{
     el.textContent=el.getAttribute('data-'+currentLang);
   });
+  renderHeroTitle(currentLang);
   document.documentElement.lang=currentLang==='en'?'en':'zh-Hant';
 }
 
-const heroTitle = document.querySelector('.hero h1');
 if (heroTitle && !heroTitle.dataset.split){
-  const text = heroTitle.textContent;
-  heroTitle.textContent = '';
-  [...text].forEach((ch, i) => {
-    const span = document.createElement('span');
-    span.className = ch === ' ' ? 'hero-space' : 'hero-char';
-    span.style.animationDelay = `${0.06 * i}s`;
-    span.textContent = ch === ' ' ? '\u00A0' : ch;
-    heroTitle.appendChild(span);
-  });
-  heroTitle.dataset.split = '1';
+  heroTitle.setAttribute('data-en', 'Wu Siou Ming');
+  heroTitle.setAttribute('data-zh', '吳修銘');
+  renderHeroTitle(currentLang);
 }
 </script>
 
