@@ -196,9 +196,26 @@ footer{text-align:center;padding:4rem 2rem;font-size:.8rem;opacity:.4}
   .hero h1.is-zh{font-size:2.2rem}
   .hero p{font-size:1rem}
   .work-card{min-width:78vw;height:60vw}
+ .work-card{
+    min-width:82vw;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+  }
   .work-card img{
     object-fit:contain;
+    width:100%;
+    height:auto;
+    object-fit:initial;
     background:#111;
+    display:block;
+  }
+  .work-info{
+    position:relative;
+    left:auto;right:auto;bottom:auto;
+    padding:1.1rem 1.1rem 1.2rem;
+    background:#111;
+    border-top:1px solid rgba(255,255,255,.06)
   }
 }
 
