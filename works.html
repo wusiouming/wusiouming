@@ -176,28 +176,19 @@ header{
 @media(max-width:900px){
   .section-title{font-size:1.85rem}
   .card{min-width:70vw;height:60vw}
-   .card{
-    min-width:82vw;
+ .card{
+    width:min(72vw, 320px);
+    min-width:min(72vw, 320px);
     height:auto;
-    display:flex;
-    flex-direction:column;
   }
   .card img{
-    object-fit:contain;
     width:100%;
     height:auto;
     object-fit:initial;
-  height:min(58vw, 280px);
-    object-fit:contain;
-    background:#111;    
     display:block;
   }
   .card-overlay{
-    position:relative;
-    left:auto;right:auto;bottom:auto;
     padding:1.1rem 1.1rem 1.2rem;
-    background:#111;
-    border-top:1px solid rgba(255,255,255,.06)
   }
 }
 
